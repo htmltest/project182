@@ -228,8 +228,8 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 .main-welcome {height:100vh; min-height:660px; position:relative}
 .main-welcome-photos {position:absolute; left:0; top:0; bottom:0; right:0}
 .main-welcome-photo {float:left; height:100%; width:33.33%; background:no-repeat; transition:width 0.2s}
-.main-welcome-photos:hover .main-welcome-photo {width:16%}
-.main-welcome-photos:hover .main-welcome-photo:hover {width:68%}
+.main-welcome-photos:hover .main-welcome-photo {width:23%}
+.main-welcome-photos:hover .main-welcome-photo:hover {width:54%}
 .main-welcome-photo:nth-child(1) {background-position:left center}
 .main-welcome-photo:nth-child(2) {background-position:center}
 .main-welcome-photo:nth-child(3) {background-position:right center}
@@ -362,19 +362,129 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 
 .portfolio {margin:0 -15px 30px -15px; font-size:0; line-height:0; letter-spacing:-1px}
 .portfolio-item {display:inline-block; vertical-align:top; width:33.33%; padding:30px 15px 0 15px}
-.portfolio-item:nth-child(1),
-.portfolio-item:nth-child(2) {width:50%}
-.portfolio-item-inner {position:relative; background:no-repeat center; background-size:cover; height:660px}
+.portfolio-item:nth-child(1) {width:50%; padding-right:30px}
+.portfolio-item:nth-child(2) {width:50%; padding-left:0}
+.portfolio-item-inner {position:relative; height:660px}
+.portfolio-item-preview {position:absolute; left:0; top:0; right:0; bottom:0}
+.portfolio-item-preview-inner {position:absolute; left:0; top:0; right:0; bottom:0; background:no-repeat center; background-size:cover}
 .portfolio-item-content {position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(10, 10, 10, 0.6); opacity:0; transition:opacity 0.2s; padding:85px 80px 90px 80px}
 .portfolio-item-inner:hover .portfolio-item-content {opacity:1}
 .portfolio-item-content h3 {margin:0}
 .portfolio-item:nth-child(1),
 .portfolio-item:nth-child(2) .portfolio-item-content h3 {max-width:56%}
-.portfolio-item-size {margin:24px 0 0 0; font-size:28px; line-height:40px; font-weight:normal}
+.portfolio-item-photo-mobile {display:none}
+.portfolio-item-size {margin:24px 0 0 0; font-size:28px; line-height:40px; font-weight:normal; letter-spacing:0}
+.portfolio-item-size-tablet {display:none}
 .portfolio-item-address {margin:27px 0 0 0; font-size:22px; line-height:33px; letter-spacing:0}
 .portfolio-item:nth-child(1),
 .portfolio-item:nth-child(2) .portfolio-item-address {max-width:56%}
 .portfolio-item-content .btn {position:absolute; left:80px; bottom:90px}
+
+@media screen and (max-width:1799px) {
+    .portfolio {margin:0 -10px 20px -10px}
+    .portfolio-item {padding:20px 10px 0 10px}
+    .portfolio-item:nth-child(1) {padding-right:20px}
+    .portfolio-item:nth-child(2) {padding-left:0}
+    .portfolio-item-inner {height:420px}
+    .portfolio-item-content {padding:55px 40px 60px 60px}
+    .portfolio-item:nth-child(1),
+    .portfolio-item:nth-child(2) .portfolio-item-content h3 {max-width:none}
+    .portfolio-item-size {margin:12px 0 0 0; font-size:24px}
+    .portfolio-item-address {margin:12px 0 0 0; font-size:18px; line-height:27px}
+    .portfolio-item:nth-child(1),
+    .portfolio-item:nth-child(2) .portfolio-item-address {max-width:none}
+    .portfolio-item-content .btn {left:60px; bottom:60px}
+}
+
+@media screen and (max-width:1259px) {
+    .portfolio {margin:0}
+    .portfolio-item {display:block; padding:0; width:auto}
+    .portfolio-item:nth-child(1) {padding-right:0; width:auto}
+    .portfolio-item:nth-child(2) {padding-left:0; width:auto}
+    .portfolio-item-inner {display:table; height:auto; width:100%}
+    .portfolio-item:nth-child(even) {direction:rtl}
+    .portfolio-item-preview {display:table-cell; vertical-align:middle; width:50%; position:relative; left:auto; top:auto; right:auto; bottom:auto; direction:ltr}
+    .portfolio-item-preview-inner {position:relative; left:auto; top:auto; right:auto; bottom:auto; height:420px}
+    .portfolio-item-content {display:table-cell; vertical-align:middle; padding:0; position:relative; background:none; opacity:1; padding:0 40px; direction:ltr}
+
+    .portfolio-item:nth-child(4n-3) {background:#36383d}
+    .portfolio-item:nth-child(4n-2) {background:#575b63}
+    .portfolio-item:nth-child(4n-1) {background:#dee1e4; color:#36383d}
+    .portfolio-item:nth-child(4n-1) .portfolio-item-content .btn {color:#575b63; background:#f3f3f3}
+    .portfolio-item:nth-child(4n-1) .portfolio-item-content .btn:hover {color:#fff; background:#494d53}
+    .portfolio-item:nth-child(4n-1) .portfolio-item-content .btn:active {color:#fff; background:#5b6068}
+    .portfolio-item:nth-child(4n) {background:#fff; color:#36383d}
+    .portfolio-item:nth-child(4n) .portfolio-item-content .btn {color:#575b63; background:#f3f3f3}
+    .portfolio-item:nth-child(4n) .portfolio-item-content .btn:hover {color:#fff; background:#494d53}
+    .portfolio-item:nth-child(4n) .portfolio-item-content .btn:active {color:#fff; background:#5b6068}
+
+    .portfolio-item-content h3 {font-size:24px; line-height:30px}
+    .portfolio-item-size {display:none}
+    .portfolio-item-address {margin:10px 0 0 0; font-size:18px; line-height:27px}
+    .portfolio-item-size-tablet {display:block; margin:16px 0 0 0; font-size:18px; line-height:27px; letter-spacing:0}
+    .portfolio-item-content .btn {position:relative; margin:26px 0 0 0; left:auto; bottom:auto}
+}
+
+@media screen and (max-width:767px) {
+    .portfolio-item-inner {display:block; width:auto; padding:60px 40px}
+    .portfolio-item:nth-child(even) {direction:ltr}
+    .portfolio-item-preview {display:none}
+    .portfolio-item-content {display:block; padding:0}
+    .portfolio-item-content::after {content:""; display:block; clear:both}
+    .portfolio-item-content h3 {font-size:28px; line-height:32px}
+    .portfolio-item-photo-mobile {display:block; margin:27px -40px 0 0}
+    .portfolio-item:nth-child(even) .portfolio-item-photo-mobile {margin:27px 0 0 -40px}
+    .portfolio-item-photo-mobile img {display:block; width:100%}
+    .portfolio-item-address {float:left; clear:left; margin:20px 0 0 0; font-size:20px; line-height:30px; max-width:60%}
+    .portfolio-item-size-tablet {float:right; clear:right; margin:20px 0 0 0; font-size:20px; line-height:30px; max-width:40%}
+    .portfolio-item-content .btn {float:left; clear:left; margin:40px 0 0 0; width:100%}
+}
+
+.project-header {margin:0 -15px}
+.project-header-inner {display:table; width:100%}
+.project-header-container {display:table-cell; vertical-align:bottom; width:33.33%; padding:170px 95px 80px 95px; position:relative}
+.project-header-back {position:absolute; left:47px; top:85px; font-weight:normal; font-size:50px; line-height:55px; letter-spacing:-0.02em; text-transform:uppercase}
+.fonts-loaded .project-header-back {font-family:Steinbeck, sans-serif}
+.project-header-back a {display:inline-block; vertical-align:top; padding:0 0 0 48px; position:relative; text-decoration:none}
+.project-header-back a svg {display:block; width:28px; height:24px; fill:#fff; position:absolute; left:0; top:50%; margin-top:-6px; transition:transform 0.2s}
+.project-header-back a:hover svg {transform:translateX(-5px)}
+.project-header-container h3 {margin:0}
+.project-header-address {margin:16px 0 0 0; font-size:22px; line-height:33px; color:#acadaf}
+.project-header-size {margin:22px 0 0 0; font-size:28px; line-height:40px; font-weight:normal; color:#acadaf}
+.project-header-photo {display:table-cell; vertical-align:top; width:66.66%; padding:0 15px; line-height:0}
+.project-header-photo-inner {height:660px; background:no-repeat center; background-size:cover}
+
+@media screen and (max-width:1799px) {
+    .project-header-container {width:50%; padding:125px 70px 49px 70px}
+    .project-header-back {left:32px; top:56px; font-size:32px; line-height:39px}
+    .project-header-back a {padding:0 0 0 38px}
+    .project-header-back a svg {width:23px; height:16px; margin-top:-4px}
+    .project-header-address {margin:20px 0 0 0; font-size:18px; line-height:27px}
+    .project-header-size {margin:20px 0 0 0; font-size:24px}
+    .project-header-photo {width:50%}
+    .project-header-photo-inner {height:540px}
+}
+
+@media screen and (max-width:1259px) {
+    .project-header {margin:0}
+    .project-header-inner {display:block; width:auto}
+    .project-header-container {display:block; width:auto; padding:53px 40px 29px 40px}
+    .project-header-back {left:auto; top:auto; position:relative}
+    .project-header-back a {padding:0 0 0 50px}
+    .project-header-back a svg {width:31px; height:16px; margin-top:-4px}
+    .project-header-container h3 {margin:84px 0 0 0; max-width:50%}
+    .project-header-address {max-width:50%}
+    .project-header-size {margin:0; position:absolute; right:40px; bottom:30px}
+    .project-header-photo {display:none}
+}
+
+@media screen and (max-width:767px) {
+    .project-header-container {padding:32px 153px 41px 40px}
+    .project-header-back {font-size:28px; line-height:32px}
+    .project-header-container h3 {margin:131px 0 0 0; max-width:none}
+    .project-header-address {max-width:none; font-size:20px; line-height:30px}
+    .project-header-size {margin:20px 0 0 0; position:relative; right:auto; bottom:auto}
+}
 
 .project {margin:0 -15px 30px -15px; font-size:0; line-height:0; letter-spacing:-1px}
 .project-item {display:inline-block; vertical-align:top; width:33.33%; padding:30px 15px 0 15px}
@@ -383,8 +493,70 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 .project-item-inner::before {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(10, 10, 10, 0.6); opacity:0; transition:opacity 0.2s}
 .project-item-inner:hover::before {opacity:1}
 
+@media screen and (max-width:1799px) {
+    .project {margin:0 -10px 20px -10px}
+    .project-item {padding:20px 10px 0 10px}
+    .project-item-inner {height:420px}
+}
+
+@media screen and (max-width:1259px) {
+    .project-item {width:50%}
+    .project-item-big {width:50%}
+}
+
+@media screen and (max-width:767px) {
+    .project {margin:0 -5px 10px -5px}
+    .project-item {padding:10px 5px 0 5px}
+    .project-item-inner {height:270px}
+}
+
 .middle-title {padding:60px 0 75px 0; text-align:center; font-weight:normal; font-size:66px; line-height:76px; letter-spacing:-0.02em; text-transform:uppercase}
 .fonts-loaded .middle-title {font-family:Steinbeck, sans-serif}
+
+@media screen and (max-width:1799px) {
+    .middle-title {padding:33px 0 53px 0; font-size:40px; line-height:44px}
+}
+
+@media screen and (max-width:767px) {
+    .middle-title {padding:32px 0 38px 0; font-size:36px; line-height:40px}
+}
+
+.project-other::after {content:""; display:block; clear:both}
+.project-other-item {float:left; width:50%; padding:0 15px 0 0}
+.project-other-item:last-child {padding:0 0 0 15px}
+.project-other-item a {display:block; position:relative; height:360px; text-decoration:none}
+.project-other-item-bg {position:absolute; left:0; top:0; right:0; bottom:0; background:no-repeat center; background-size:cover; opacity:0.2; transition:opacity 0.2s}
+.project-other-item a:hover .project-other-item-bg {opacity:0.4}
+.project-other-item svg {display:block; width:81px; height:24px; position:absolute; left:80px; top:50%; margin-top:-12px; fill:#fff; transition:transform 0.2s}
+.project-other-item a:hover svg {transform:translateX(-10px)}
+.project-other-item:last-child svg {left:auto; right:80px}
+.project-other-item:last-child a:hover svg {transform:translateX(10px)}
+.project-other-item-title {position:absolute; right:65px; top:50%; font-size:40px; line-height:48px; letter-spacing:-0.02em; text-transform:uppercase; text-align:right; margin-top:-48px}
+.project-other-item:last-child .project-other-item-title {right:auto; left:65px; text-align:left}
+
+@media screen and (max-width:1799px) {
+    .project-other-item {padding:0 10px 0 0}
+    .project-other-item:last-child {padding:0 0 0 10px}
+    .project-other-item a {height:240px}
+    .project-other-item svg {left:60px}
+    .project-other-item:last-child svg {right:60px}
+    .project-other-item-title {right:60px; font-size:32px; line-height:39px; margin-top:-39px}
+    .project-other-item:last-child .project-other-item-title {left:60px}
+}
+
+@media screen and (max-width:1259px) {
+    .project-other-item a {height:181px}
+    .project-other-item svg {left:40px; top:40px; margin-top:0; width:41px; height:16px}
+    .project-other-item:last-child svg {right:40px}
+    .project-other-item-title {right:auto; left:40px; top:71px; margin-top:0; text-align:left}
+    .project-other-item:last-child .project-other-item-title {left:auto; right:40px; text-align:right}
+}
+
+@media screen and (max-width:767px) {
+    .project-other-item a {height:121px}
+    .project-other-item svg {top:33px; width:31px; height:9px}
+    .project-other-item-title {top:55px; text-transform:none; letter-spacing:0; font-size:20px; line-height:23px}
+}
 
 .services-item {display:block; position:relative; padding:0 0 0 50%; text-decoration:none}
 .services-item:hover {text-decoration:none}
