@@ -32,7 +32,7 @@ $(document).ready(function() {
             curField.find('span').html(curField.find('span').attr('data-placeholder'));
         }
     });
-    
+
     $('body').on('click', '.form-file-remove', function(e) {
         var curField = $(this).parents().filter('.form-file');
         curField.find('input').val('').trigger('change');
@@ -81,7 +81,7 @@ $(document).ready(function() {
         for (var i = 0; i < galleryLength; i++) {
             var curTitle = '';
             var curGalleryItem = curGallery.find('.project-item').eq(i);
-            windowHTML +=                   '<div class="window-photo-preview-list-item"><a href="#"><img src="' + curGalleryItem.find('img').attr('src') + '" alt="" /></a></div>';
+            windowHTML +=                   '<div class="window-photo-preview-list-item"><a href="#" style="' + curGalleryItem.find('.project-item-inner').attr('style') + '"></a></div>';
         }
         windowHTML +=                   '</div>' +
                                     '</div>' +
@@ -111,8 +111,11 @@ $(document).ready(function() {
 
         $('.window-photo').each(function() {
             var marginPhoto = 0;
-            if ($(window).width() < 1279) {
-                marginPhoto = 348;
+            if ($(window).width() < 1260) {
+                marginPhoto = 260;
+            }
+            if ($(window).width() < 768) {
+                marginPhoto = 230;
             }
             var newHeight = marginPhoto;
             $('.window-photo-slider-list-item-inner').css({'height': 'calc(100vh - ' + newHeight + 'px)', 'line-height': 'calc(100vh - ' + newHeight + 'px)'});
@@ -145,7 +148,7 @@ $(document).ready(function() {
             initialSlide: curIndex,
             responsive: [
                 {
-                    breakpoint: 1199,
+                    breakpoint: 1259,
                     settings: {
                         arrows: false
                     }
@@ -200,6 +203,11 @@ $(document).ready(function() {
         }
     });
 
+    $('.services-item').each(function() {
+        var curItem = $(this).parent();
+        curItem.find('.services-item-detail-mobile').html( curItem.find('.services-item-content').html());
+    });
+
     $('.services-item').click(function(e) {
         var curLink = $(this);
         curLink.toggleClass('open');
@@ -213,7 +221,17 @@ $(document).ready(function() {
         slidesToScroll: 1,
         prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#slick-prev"></use></svg></button>',
         nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#slick-next"></use></svg></button>',
-        dots: false
+        dots: false,
+        responsive: [
+            {
+                breakpoint: 1259,
+                settings: {
+                    slidesToShow: 1,
+                    arrows: false,
+                    dots: true
+                }
+            }
+        ]
     });
 
     $('.furnishings-all-menu ul li a').click(function(e) {
@@ -295,7 +313,22 @@ $(document).ready(function() {
             nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-next"></use></svg></button>',
             dots: false,
             variableWidth: true,
-            initialSlide: curIndex
+            initialSlide: curIndex,
+            responsive: [
+                {
+                    breakpoint: 1259,
+                    settings: {
+                        arrows: false
+                    }
+                },
+                {
+                    breakpoint: 767,
+                    settings: {
+                        variableWidth: false,
+                        arrows: true
+                    }
+                }
+            ]
         });
 
         e.preventDefault();
@@ -335,3 +368,22 @@ function initForm(curForm) {
         ignore: ''
     });
 }
+
+$(window).on('load resize', function() {
+
+    $('.furnishings-how-scheme').each(function() {
+        var curScheme = $(this);
+        var startImgWidth = Number(curScheme.find('.furnishings-how-scheme-img img').attr('data-width'));
+        var startImgHeight = Number(curScheme.find('.furnishings-how-scheme-img img').attr('data-height'));
+        var curImgWidth = Number(curScheme.find('.furnishings-how-scheme-img img').width());
+        var curImgHeight = Number(curScheme.find('.furnishings-how-scheme-img img').height());
+        var diffWidth = curImgWidth / startImgWidth;
+        var diffHeight = curImgHeight / startImgHeight;
+
+        curScheme.find('.furnishings-how-scheme-item').each(function() {
+            var curItem = $(this);
+            curItem.css({'left': Number(curItem.attr('data-left')) * diffWidth + 'px', 'top': Number(curItem.attr('data-top')) * diffWidth + 'px'});
+        });
+    });
+
+});

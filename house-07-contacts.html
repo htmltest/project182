@@ -40,47 +40,270 @@
             </div>
             <!-- menu END -->
 
-            <!-- main list -->
-            <div class="main-list">
-
-                <!-- main item -->
-                <div class="main-item main-item-color-3">
-                    <div class="main-item-photo"><img src="files/furnishings-header.jpg" alt="" /></div>
-                    <div class="main-item-container">
-                        <div class="main-item-content">
-                            <div class="main-item-title">контакты</div>
-                            <div class="main-item-subtitle">
-                                <div class="title-row">дружный</div>
-                                <div class="title-row">коллектив —</div>
-                                <div class="title-row">залог хорошего</div>
-                                <div class="title-row"><svg><use xlink:href="images/sprite.svg#title-arrow"></use></svg>проекта</div>
-                            </div>
-                        </div>
+            <div class="page-header">
+                <div class="page-header-container">
+                    <div class="page-header-title">
+                        <h3>контакты</h3>
+                    </div>
+                    <div class="page-header-text">
+                        <h2>
+                            <div class="title-row">дружный</div>
+                            <div class="title-row">коллектив —</div>
+                            <div class="title-row">залог хорошего</div>
+                            <div class="title-row"><svg><use xlink:href="images/sprite.svg#title-arrow"></use></svg>проекта</div>
+                        </h2>
                     </div>
                 </div>
-                <!-- main item END -->
-
+                <div class="page-header-photo"><img src="files/contacts-header.jpg" alt="" /></div>
             </div>
-            <!-- main list END -->
 
             <div class="contacts-title">как нас найти</div>
             
             <div class="contacts-map" id="map"></div>
-            <script async src="https://api-maps.yandex.ru/2.1.78/?apikey=e57c585d-ec7d-41bf-af46-c8d197dc63c8&load=package.full&lang=ru-RU&onload=getYandexMap"></script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDigK7sLE8t3JXWSbf2l-hCLhrWiLYeQ1A&callback=initMap&libraries=&v=weekly" async></script>
             <script>
+                var stylesArray = [
+                  {
+                    "elementType": "geometry",
+                    "stylers": [
+                      {
+                        "color": "#1d2c4d"
+                      }
+                    ]
+                  },
+                  {
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                      {
+                        "color": "#8ec3b9"
+                      }
+                    ]
+                  },
+                  {
+                    "elementType": "labels.text.stroke",
+                    "stylers": [
+                      {
+                        "color": "#1a3646"
+                      }
+                    ]
+                  },
+                  {
+                    "featureType": "administrative.country",
+                    "elementType": "geometry.stroke",
+                    "stylers": [
+                      {
+                        "color": "#4b6878"
+                      }
+                    ]
+                  },
+                  {
+                    "featureType": "administrative.land_parcel",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                      {
+                        "color": "#64779e"
+                      }
+                    ]
+                  },
+                  {
+                    "featureType": "administrative.province",
+                    "elementType": "geometry.stroke",
+                    "stylers": [
+                      {
+                        "color": "#4b6878"
+                      }
+                    ]
+                  },
+                  {
+                    "featureType": "landscape.man_made",
+                    "elementType": "geometry.stroke",
+                    "stylers": [
+                      {
+                        "color": "#334e87"
+                      }
+                    ]
+                  },
+                  {
+                    "featureType": "landscape.natural",
+                    "elementType": "geometry",
+                    "stylers": [
+                      {
+                        "color": "#023e58"
+                      }
+                    ]
+                  },
+                  {
+                    "featureType": "poi",
+                    "elementType": "geometry",
+                    "stylers": [
+                      {
+                        "color": "#283d6a"
+                      }
+                    ]
+                  },
+                  {
+                    "featureType": "poi",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                      {
+                        "color": "#6f9ba5"
+                      }
+                    ]
+                  },
+                  {
+                    "featureType": "poi",
+                    "elementType": "labels.text.stroke",
+                    "stylers": [
+                      {
+                        "color": "#1d2c4d"
+                      }
+                    ]
+                  },
+                  {
+                    "featureType": "poi.park",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                      {
+                        "color": "#023e58"
+                      }
+                    ]
+                  },
+                  {
+                    "featureType": "poi.park",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                      {
+                        "color": "#3C7680"
+                      }
+                    ]
+                  },
+                  {
+                    "featureType": "road",
+                    "elementType": "geometry",
+                    "stylers": [
+                      {
+                        "color": "#304a7d"
+                      }
+                    ]
+                  },
+                  {
+                    "featureType": "road",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                      {
+                        "color": "#98a5be"
+                      }
+                    ]
+                  },
+                  {
+                    "featureType": "road",
+                    "elementType": "labels.text.stroke",
+                    "stylers": [
+                      {
+                        "color": "#1d2c4d"
+                      }
+                    ]
+                  },
+                  {
+                    "featureType": "road.highway",
+                    "elementType": "geometry",
+                    "stylers": [
+                      {
+                        "color": "#2c6675"
+                      }
+                    ]
+                  },
+                  {
+                    "featureType": "road.highway",
+                    "elementType": "geometry.stroke",
+                    "stylers": [
+                      {
+                        "color": "#255763"
+                      }
+                    ]
+                  },
+                  {
+                    "featureType": "road.highway",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                      {
+                        "color": "#b0d5ce"
+                      }
+                    ]
+                  },
+                  {
+                    "featureType": "road.highway",
+                    "elementType": "labels.text.stroke",
+                    "stylers": [
+                      {
+                        "color": "#023e58"
+                      }
+                    ]
+                  },
+                  {
+                    "featureType": "transit",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                      {
+                        "color": "#98a5be"
+                      }
+                    ]
+                  },
+                  {
+                    "featureType": "transit",
+                    "elementType": "labels.text.stroke",
+                    "stylers": [
+                      {
+                        "color": "#1d2c4d"
+                      }
+                    ]
+                  },
+                  {
+                    "featureType": "transit.line",
+                    "elementType": "geometry.fill",
+                    "stylers": [
+                      {
+                        "color": "#283d6a"
+                      }
+                    ]
+                  },
+                  {
+                    "featureType": "transit.station",
+                    "elementType": "geometry",
+                    "stylers": [
+                      {
+                        "color": "#3a4762"
+                      }
+                    ]
+                  },
+                  {
+                    "featureType": "water",
+                    "elementType": "geometry",
+                    "stylers": [
+                      {
+                        "color": "#0e1626"
+                      }
+                    ]
+                  },
+                  {
+                    "featureType": "water",
+                    "elementType": "labels.text.fill",
+                    "stylers": [
+                      {
+                        "color": "#4e6d70"
+                      }
+                    ]
+                  }
+                ];
+            
+                let map;
 
-                var myMap;
-                var coords = [55.791607, 37.595079];
-
-                function getYandexMap() {
-                    myMap = new ymaps.Map('map', {
-                        center: coords,
-                        zoom: 12,
-                        controls: []
-                    });
-
-                    myMap.controls.add('zoomControl');
-                    myMap.behaviors.disable('scrollZoom');
+                function initMap() {
+                  map = new google.maps.Map(document.getElementById("map"), {
+                    center: { lat: 55.791607, lng: 37.595079 },
+                    zoom: 13,
+                    styles: stylesArray
+                  });
                 }
             </script>
 
