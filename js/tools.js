@@ -44,10 +44,10 @@ $(document).ready(function() {
         var curName = curInput.val().replace(/.*(\/|\\)/, '');
         if (curName != '') {
             curField.addClass('full');
-            curField.find('span').html(curName);
+            curField.find('span em').html(curName);
         } else {
             curField.removeClass('full');
-            curField.find('span').html(curField.find('span').attr('data-placeholder'));
+            curField.find('span em').html(curField.find('span').attr('data-placeholder'));
         }
     });
 
