@@ -77,11 +77,11 @@ $(document).ready(function() {
         }
     });
 
-    $('body').on('click', '.project-item a', function(e) {
+    $('body').on('click', '.project-item-inner', function(e) {
         var curLink = $(this);
-        var curItem = curLink.parents().filter('.project-item');
-        var curGallery = curItem.parents().filter('.project');
-        var curIndex = curGallery.find('.project-item').index(curItem);
+        var curItem = curLink;
+        var curGallery = $('body');
+        var curIndex = curGallery.find('.project-item-inner').index(curItem);
 
         var curPadding = $('.wrapper').width();
         var curWidth = $(window).width();
@@ -99,11 +99,11 @@ $(document).ready(function() {
                                     '<div class="window-photo-preview-inner">' +
                                         '<div class="window-photo-preview-list">';
 
-        var galleryLength = curGallery.find('.project-item').length;
+        var galleryLength = curGallery.find('.project-item-inner').length;
         for (var i = 0; i < galleryLength; i++) {
             var curTitle = '';
-            var curGalleryItem = curGallery.find('.project-item').eq(i);
-            windowHTML +=                   '<div class="window-photo-preview-list-item"><a href="#" style="' + curGalleryItem.find('.project-item-inner').attr('style') + '"></a></div>';
+            var curGalleryItem = curGallery.find('.project-item-inner').eq(i);
+            windowHTML +=                   '<div class="window-photo-preview-list-item"><a href="#" style="' + curGalleryItem.attr('style') + '"></a></div>';
         }
         windowHTML +=                   '</div>' +
                                     '</div>' +
@@ -115,9 +115,9 @@ $(document).ready(function() {
                                     '<div class="window-photo-slider-list">';
 
         for (var i = 0; i < galleryLength; i++) {
-            var curGalleryItem = curGallery.find('.project-item').eq(i);
+            var curGalleryItem = curGallery.find('.project-item-inner').eq(i);
             windowHTML +=               '<div class="window-photo-slider-list-item">' +
-                                            '<div class="window-photo-slider-list-item-inner"><img src="' + pathTemplate + 'images/loading.gif" data-src="' + curGalleryItem.find('a').attr('href') + '" alt="" /></div>' +
+                                            '<div class="window-photo-slider-list-item-inner"><img src="' + pathTemplate + 'images/loading.gif" data-src="' + curGalleryItem.attr('href') + '" alt="" /></div>' +
                                         '</div>';
         }
         windowHTML +=               '</div>' +
@@ -260,15 +260,16 @@ $(document).ready(function() {
 
     $('.furnishings-all-menu ul li a').click(function(e) {
         var curLink = $(this);
+        var curAll = curLink.parents().filter('.furnishings-all');
         if (curLink.attr('data-letter') == '') {
-            $('.furnishings-all-menu ul li a.disabled').removeClass('disabled');
-            $('.furnishings-all-list a.disabled').removeClass('disabled');
+            curAll.find('.furnishings-all-menu ul li a.disabled').removeClass('disabled');
+            curAll.find('.furnishings-all-list a.disabled').removeClass('disabled');
         } else {
-            $('.furnishings-all-menu ul li a').addClass('disabled');
+            curAll.find('.furnishings-all-menu ul li a').addClass('disabled');
             curLink.removeClass('disabled');
-            $('.furnishings-all-list a').addClass('disabled');
+            curAll.find('.furnishings-all-list a').addClass('disabled');
             var curLetter = curLink.attr('data-letter').toLowerCase();
-            $('.furnishings-all-list a').each(function() {
+            curAll.find('.furnishings-all-list a').each(function() {
                 var thisLink = $(this);
                 var thisLetter = thisLink.text()[0].toLowerCase();
                 if (thisLetter == curLetter) {
@@ -282,10 +283,12 @@ $(document).ready(function() {
     $('.furnishings-how-scheme-item').on('mouseenter', function() {
         $('.furnishings-how-scheme-info').html($(this).find('.furnishings-how-scheme-item-info').html());
         $('.furnishings-how-scheme-info').addClass('visible');
+        $('.scheme-sectors-fake-path').attr('d', $(this).attr('data-d'));
     });
 
     $('.furnishings-how-scheme-item').on('mouseleave', function() {
         $('.furnishings-how-scheme-info').removeClass('visible');
+        $('.scheme-sectors-fake-path').attr('d', '');
     });
 
     $('.furnishings-item-title, .furnishings-item-slider-item-inner').click(function(e) {
@@ -379,6 +382,18 @@ $(document).ready(function() {
                 $('.window-furnishings-close').trigger('click');
             }
         }
+    });
+
+    $('.furnishings-best-menu ul li a').click(function(e) {
+        var curLink = $(this);
+        if (!curLink.hasClass('btn-white')) {
+            $('.furnishings-best-menu ul li a.btn-white').removeClass('btn-white');
+            curLink.addClass('btn-white');
+            var curIndex = $('.furnishings-best-menu ul li a').index(curLink);
+            $('.furnishings-tab.active').removeClass('active');
+            $('.furnishings-tab').eq(curIndex).addClass('active');
+        }
+        e.preventDefault();
     });
 
 });

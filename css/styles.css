@@ -45,10 +45,8 @@ ol li+li+li+li+li+li+li+li+li+li {content:counter(point)}
     h2 {font-size:40px; line-height:44px}
     h3 {font-size:32px; line-height:39px}
     h4 {font-size:24px; line-height:30px}
-}
-
-@media screen and (max-width:1799px) {
-    ol li {padding:0 0 0 60px}
+    ol li {padding:0 0 0 50px}
+    ol li::before {font-size:20px}
 }
 
 @media screen and (max-width:767px) {
@@ -252,10 +250,10 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 
 @media screen and (max-width:1259px) {
     .main-welcome {min-height:780px}
-    .main-welcome-photo {float:none; height:auti; width:auto; position:absolute; left:0; top:0; right:0; bottom:0}
+    .main-welcome-photo {float:none; height:auto; width:auto; position:absolute; left:0; top:0; right:0; bottom:0; background-size:cover}
     .main-welcome-photo:nth-child(1),
     .main-welcome-photo:nth-child(2) {display:none}
-    .main-welcome-photo:nth-child(3) {background-position:left center}
+    .main-welcome-photo:nth-child(3) {background-image:url(../files/main-welcome-tablet.jpg) !important}
     .main-welcome-photos:hover .main-welcome-photo {width:auto}
     .main-welcome-photos:hover .main-welcome-photo:hover {width:auto}
     .main-welcome-shadow {height:auto; top:0; background:linear-gradient(0deg, #0e0b0b 0%, rgba(14, 11, 11, 0) 100%)}
@@ -266,6 +264,7 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 
 @media screen and (max-width:767px) {
     .main-welcome-title {left:37px; bottom:32px; right:37px}
+    .main-welcome-photo:nth-child(3) {background-image:url(../files/main-welcome-mobile.jpg) !important}
 }
 
 .main-item {display:table; width:100%; direction:rtl}
@@ -281,21 +280,21 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 .main-item-photo-container {position:relative; height:720px; overflow:hidden}
 .main-item-photo-content {height:calc(100% + 100px); background:no-repeat center; background-size:cover}
 .main-item-container {display:table-cell; vertical-align:middle; direction:ltr; padding:0 80px; width:50%}
-.main-item-color-1 .main-item-container-2 {background:#dee1e4; color:#36383d; padding:140px 80px}
+.main-item-color-1 .main-item-container-2 {background:#dee1e4; color:#36383d; padding:0 80px; height:720px}
 .main-item-color-1 .main-item-container-2 .title-row svg {fill:#36383d; stroke:#36383d}
 .main-item-content {max-width:640px}
 .main-item-content h3 {margin:0}
 .main-item-content h3 svg {width:79px; height:16px; margin:-2px 20px 0 0}
 .main-item-photo-mobile {display:none}
-.main-item-text {margin:30px 0 0 0}
+.main-item-text {margin:39px 0 0 0}
 .main-item-link {margin:50px 0 0 0}
 
 @media screen and (max-width:1799px) {
     .main-item-container {padding:0 60px}
     .main-item-photo-container {height:540px}
     .main-item-content h3 svg {width:67px; height:16px}
-    .main-item-color-1 .main-item-container-2 {padding:100px 50px 100px 60px}
-    .main-item-text {margin:10px 0 0 0}
+    .main-item-color-1 .main-item-container-2 {padding:0 50px 0 60px; height:540px}
+    .main-item-text {margin:17px 0 0 0}
     .main-item-link {margin:40px 0 0 0}
 }
 
@@ -310,6 +309,7 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
     .main-item-container {position:absolute; display:table; left:0; top:0; height:100%; width:100%; padding:0}
     .main-item-content {display:table-cell; vertical-align:middle; max-width:none; padding:0 215px 0 40px}
     .main-item-only-text .main-item-container {position:relative; display:block; left:auto; top:auto; height:auto; width:auto; padding:98px 220px 98px 40px}
+    .main-item-color-1 .main-item-container-2 {height:auto; padding:98px 220px 98px 40px}
     .main-item-only-text .main-item-content {display:block; padding:0}
 }
 
@@ -321,7 +321,7 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
     .main-item-only-text .main-item-content {padding:57px 40px 60px 40px}
     .main-item-photo-mobile {display:block; margin:30px -40px 0 0}
     .main-item:nth-child(even) .main-item-photo-mobile {margin:30px 0 0 -40px}
-    .main-item-text {margin:20px 0 0 0}
+    .main-item-text {margin:27px 0 0 0}
     .main-item-link {margin:40px 0 0 0}
     .main-item-link .btn {width:100%}
 }
@@ -338,11 +338,12 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 .page-header-text h2 svg {width:94px; height:24px; margin:-2px 20px 0 0}
 .page-header-text p {margin:20px 0 0 0}
 .page-header-photo {display:table-cell; width:50%; line-height:0}
-.page-header-photo img {display:block; width:100%; max-width:none}
+.page-header-photo-img {height:720px; background:no-repeat center; background-size:cover}
 
 @media screen and (max-width:1799px) {
     .page-header-container {padding:0 60px 55px 60px}
     .page-header-title {left:60px; top:56px; right:60px}
+    .page-header-photo-img {height:540px}
 }
 
 @media screen and (max-width:1259px) {
@@ -461,7 +462,8 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 .project-header-address {margin:16px 0 0 0; font-size:22px; line-height:33px; color:#acadaf}
 .project-header-size {margin:22px 0 0 0; font-size:28px; line-height:40px; font-weight:normal; color:#acadaf}
 .project-header-photo {display:table-cell; vertical-align:top; width:66.66%; padding:0 15px; line-height:0}
-.project-header-photo-inner {height:660px; background:no-repeat center; background-size:cover}
+.project-header-photo-inner {height:660px; background:no-repeat center; background-size:cover; position:relative}
+.project-header-photo-inner .project-item-inner {position:absolute; left:0; top:0; right:0; bottom:0; height:auto}
 
 @media screen and (max-width:1799px) {
     .project-header-container {width:50%; padding:125px 70px 49px 70px}
@@ -679,9 +681,9 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 .furnishings-best-menu .btn {background:#36383d; width:200px}
 .furnishings-best-menu .btn:hover {background:#f3f3f3}
 .furnishings-best-menu .btn:active {background:#bdbdbd}
-.furnishings-best-menu .btn-white {background:#dee1e4}
-.furnishings-best-menu .btn-white:hover {background:#494d53}
-.furnishings-best-menu .btn-white:active {background:#5b6068}
+.furnishings-best-menu .btn-white,
+.furnishings-best-menu .btn-white:hover,
+.furnishings-best-menu .btn-white:active {background:#dee1e4; cursor:default; color:#575b63; pointer-events:none}
 
 @media screen and (max-width:1799px) {
     .furnishings-best {margin:58px 0 0 0}
@@ -702,6 +704,10 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
     .furnishings-best-menu {margin:32px 0 0 0}
     .furnishings-best-menu .btn {width:190px}
 }
+
+.furnishings-tabs {position:relative}
+.furnishings-tab {position:absolute; left:-9999px; top:-9999px; width:100%; opacity:0; transition:opacity 0.2s}
+.furnishings-tab.active {position:relative; left:auto; top:auto; opacity:1}
 
 .furnishings-list {margin:70px 0 0 0}
 .furnishings-item {position:relative; padding:0 0 0 33.33%}
@@ -850,10 +856,11 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 .furnishings-how-scheme {margin:84px 0 0 0; position:relative}
 .furnishings-how-scheme-img {position:relative}
 .furnishings-how-scheme-img img {display:block; width:100%}
-.furnishings-how-scheme-img::after {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:#000; opacity:0.6}
+.furnishings-how-scheme-img svg {display:block; position:absolute; left:0; top:0; width:100%; height:100%}
+.furnishings-how-scheme-img svg .scheme-sectors-overlay {opacity:0.6}
 .furnishings-how-scheme-item {position:absolute; cursor:pointer}
-.furnishings-how-scheme-item-icon {width:28px; height:28px; background:#000; border-radius:50%; position:relative; transition:background 0.2s}
-.furnishings-how-scheme-item:hover .furnishings-how-scheme-item-icon {background:#d63131}
+.furnishings-how-scheme-item-icon {width:28px; height:28px; background:rgba(0, 0, 0, 0.6); border-radius:50%; position:relative; transition:background 0.2s}
+.furnishings-how-scheme-item:hover .furnishings-how-scheme-item-icon {background:rgba(214, 49, 49, 0.6)}
 .furnishings-how-scheme-item-icon svg {display:block; width:6px; height:12px; position:absolute; left:50%; top:50%; margin:-6px 0 0 -3px; fill:#fff}
 .furnishings-how-scheme-item-info {display:none}
 .furnishings-how-scheme-info {opacity:0; position:absolute; right:0; bottom:0; background:#dee1e4; color:#000; padding:40px; transition:opacity 0.2s}
