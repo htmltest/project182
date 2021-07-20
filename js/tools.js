@@ -396,6 +396,22 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $('.portfolio-ajax-link').click(function(e) {
+        if (!$('.portfolio-ajax-link').hasClass('loading')) {
+            $('.portfolio-ajax-link').addClass('loading')
+            $.ajax({
+                type: 'POST',
+                url: $(this).attr('href'),
+                dataType: 'html',
+                cache: false
+            }).done(function(html) {
+                $('.portfolio').append(html);
+                $('.portfolio-ajax-link').remove();
+            });
+        }
+        e.preventDefault();
+    });
+
 });
 
 function initForm(curForm) {
@@ -410,7 +426,43 @@ function initForm(curForm) {
     curForm.find('input.phoneRU').mask('+7 (000) 000-00-00');
 
     curForm.validate({
-        ignore: ''
+        ignore: '',
+        submitHandler: function(form) {
+            var curForm = $(form);
+            if (curForm.hasClass('ajax-form')) {
+                curForm.addClass('loading');
+                var formData = new FormData(form);
+
+                $.ajax({
+                    type: 'POST',
+                    url: curForm.attr('action'),
+                    processData: false,
+                    contentType: false,
+                    dataType: 'json',
+                    data: formData,
+                    cache: false
+                }).done(function(data) {
+                    curForm.find('.message').remove();
+                    if (data.status) {
+                        curForm.find('.form-input input, .form-input textarea').each(function() {
+                            $(this).val('').trigger('change blur').removeClass('error valid');
+                            $(this).parent().removeClass('focus full');
+                        });
+                        curForm.find('.form-ctrl-message').append('<div class="message">' + data.message + '</div>')
+                        window.setTimeout(function() {
+                            curForm.find('.form-ctrl-message .message').fadeOut(function() {
+                                curForm.find('.form-message').html('');
+                            });
+                        }, 5000);
+                    } else {
+                        curForm.find('.form-ctrl-message').append('<div class="message">' + data.message + '</div>')
+                    }
+                    curForm.removeClass('loading');
+                });
+            } else {
+                form.submit();
+            }
+        }
     });
 }
 

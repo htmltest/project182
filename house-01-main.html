@@ -42,9 +42,9 @@
 
             <div class="main-welcome">
                 <div class="main-welcome-photos">
-                    <div class="main-welcome-photo" style="background-image:url(files/main-welcome-1.jpg)"></div>
-                    <div class="main-welcome-photo" style="background-image:url(files/main-welcome-2.jpg)"></div>
-                    <div class="main-welcome-photo" style="background-image:url(files/main-welcome-3.jpg)"></div>
+                    <div class="main-welcome-photo" style="background-image:url(files/main-welcome-1.png)"></div>
+                    <div class="main-welcome-photo" style="background-image:url(files/main-welcome-2.png)"></div>
+                    <div class="main-welcome-photo" style="background-image:url(files/main-welcome-3.png)"></div>
                 </div>
                 <div class="main-welcome-shadow"></div>
                 <div class="main-welcome-title">
@@ -189,7 +189,7 @@
 
                 <div class="footer-feedback">
                     <div class="footer-feedback-title">Связаться с нами</div>
-                    <form action="#" method="post">
+                    <form action="ajax/success.html" method="post" class="ajax-form">
                         <div class="form-input"><span>Имя<em>*</em></span><input type="text" name="name" value="" class="required" /></div>
                         <div class="form-input"><span>E-mail<em>*</em></span><input type="text" name="email" value="" class="required email" /></div>
                         <div class="form-input"><span>Телефон<em>*</em></span><input type="text" name="phone" value="" class="required phoneRU" /></div>
@@ -197,7 +197,10 @@
                         <div class="form-file">
                             <div class="form-file-input"><input type="file" name="file" /><span data-placeholder="Приложить файл"><em>Приложить файл</em></span><a href="#" class="form-file-remove"></a></div>
                         </div>
-                        <div class="form-submit"><input type="submit" value="Отправить" class="btn" /></div>
+                        <div class="form-ctrl">
+                            <div class="form-submit"><input type="submit" value="Отправить" class="btn" /></div>
+                            <div class="form-ctrl-message"></div>
+                        </div>
                     </form>
                 </div>
 

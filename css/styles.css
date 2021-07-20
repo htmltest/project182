@@ -72,13 +72,16 @@ ol li+li+li+li+li+li+li+li+li+li {content:counter(point)}
     .btn {font-size:16px}
 }
 
+form.loading {position:relative}
+form.loading::after {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(47, 50, 54, 0.88) url(../images/loading.gif) no-repeat center; z-index:1}
+
 .form-input {margin:30px 0; position:relative}
-.form-input span {position:absolute; left:0; top:0; font-size:18px; line-height:27px; color:#fff; opacity:0.6; text-transform:uppercase}
-.form-input.full span {display:none}
-.form-input.focus span {display:none}
+.form-input span {position:absolute; left:0; top:19px; font-size:18px; line-height:27px; color:#fff; opacity:0.6; text-transform:uppercase; transition:top 0.2s, font-size 0.2s, letter-spacing 0.2s}
+.form-input.full span,
+.form-input.focus span {top:0; font-size:14px; line-height:21px}
 .form-input span em {font-style:normal; color:#ff6f6f}
 .form-input input,
-.form-input textarea {position:relative; border:none; border-bottom:1px solid #575b63; font:500 18px/27px Arial, sans-serif; color:#fff; vertical-align:top; margin:0; padding:0 0 13px 0; width:100%; height:41px; box-sizing:border-box; outline:none; border-radius:0; background:transparent; -webkit-appearance:none; transition:border-color 0.2s}
+.form-input textarea {position:relative; border:none; border-bottom:1px solid #575b63; font:500 18px/27px Arial, sans-serif; color:#fff; vertical-align:top; margin:0; padding:19px 0 7px 0; width:100%; height:54px; box-sizing:border-box; outline:none; border-radius:0; background:transparent; -webkit-appearance:none; transition:border-color 0.2s}
 .fonts-loaded .form-input input,
 .fonts-loaded .form-input textarea {font-family:Inter, sans-serif}
 .form-input textarea {resize:none; overflow:auto}
@@ -93,8 +96,10 @@ ol li+li+li+li+li+li+li+li+li+li {content:counter(point)}
 @media screen and (max-width:1799px) {
     .form-input {margin:20px 0}
     .form-input span {font-size:16px; line-height:24px}
+    .form-input.full span,
+    .form-input.focus span {font-size:14px; line-height:21px}
     .form-input input,
-    .form-input textarea {font-size:16px; line-height:24px; padding:0 0 10px 0; height:35px}
+    .form-input textarea {font-size:16px; line-height:24px}
 }
 
 @media screen and (max-width:1259px) {
@@ -131,12 +136,29 @@ ol li+li+li+li+li+li+li+li+li+li {content:counter(point)}
     .form-file {margin:30px 0}
 }
 
+.form-ctrl::after {content:""; display:block; clear:both}
+.form-submit {float:left}
+.form-ctrl-message {float:right; max-width:50%; font-size:18px; line-height:27px; color:#fff; max-width:50%; padding:17px 0 0 0}
+.form-ctrl-message img {display:inline-block; vertical-align:middle; margin:-2px 10px 0 0}
+
+@media screen and (max-width:1799px) {
+    .form-ctrl-message {max-width:100%}
+}
+
+@media screen and (max-width:1259px) {
+    .form-ctrl-message {max-width:50%}
+}
+
 @media screen and (min-width:1260px) {
     .on-tablet {display:none !important}
 }
 
 @media screen and (max-width:1259px) {
     .no-tablet {display:none !important}
+}
+
+@media screen and (max-width:767px) {
+    .no-mobile {display:none !important}
 }
 
 .wrapper {width:100%; min-width:480px; position:relative; overflow:hidden; padding:0 0 0 72px}
@@ -153,13 +175,19 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 .logo {position:absolute; left:50%; top:50%; margin:-43px 0 0 -9px; width:18px; height:86px; background:url(../images/logo.svg) no-repeat}
 .logo a {display:block; position:absolute; left:0; top:0; right:0; bottom:0}
 .menu-link {display:block; position:absolute; left:0; top:0; right:0; bottom:0; padding:22px 0 0 19px}
-.menu-link svg {display:block; width:34px; height:22px; fill:#fff}
+.menu-link svg {display:block; width:34px; height:22px; fill:#fff; position:relative}
+
+@media screen and (min-width:1260px) {
+    .menu-link:before {content:""; display:block; position:absolute; left:9px; top:6px; width:54px; height:54px; background:#575b63; border-radius:50%; opacity:0; transition:opacity 0.2s}
+    header:hover .menu-link:before {opacity:1}
+}
 
 @media screen and (max-width:1799px) {
     header {width:62px}
     .logo {width:16px; height:71px; background-image:url(../images/logo-middle.svg); margin:-35px 0 0 -8px}
     .menu-link {padding:18px 0 0 18px}
     .menu-link svg {width:25px; height:16px}
+    .menu-link:before {width:46px; height:46px; left:8px; top:3px}
 }
 
 @media screen and (max-width:1259px) {
@@ -177,8 +205,8 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 
 .menu {position:fixed; left:0; top:0; bottom:0; padding:10px 0 0 0; width:311px; z-index:200; background:#36383d; transform:translateX(-100%); overflow:auto}
 .menu-open .menu {transform:none; transition:transform 0.2s}
-.menu-close {display:block; margin:0 0 0 10px; width:49px}
-.menu-close svg {display:block; width:49px; height:49px; fill:#fff}
+.menu-close {display:block; margin:0 0 0 10px; width:49px; position:relative}
+.menu-close svg {display:block; width:49px; height:49px; fill:#fff; position:relative}
 .menu-logo {margin:35px 0 0 68px; line-height:0}
 .menu-list {margin:146px 0 0 68px; font-weight:normal; font-size:18px; line-height:22px; text-transform:uppercase; min-height:calc(100vh - 463px)}
 .menu-list ul {margin:0; padding:0; list-style:none}
@@ -193,19 +221,26 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 .menu-phone a::after {content:""; display:block; position:absolute; left:0; bottom:-5px; right:0; height:1px; background:#fff; transform:scale(0, 1); transform-origin:left center; transition:transform 0.2s}
 .menu-phone a:hover::after {transform:scale(1, 1)}
 
+@media screen and (min-width:1260px) {
+    .menu-close:before {content:""; display:block; position:absolute; left:50%; top:50%; width:54px; height:54px; margin:-27px 0 0 -27px; background:#575b63; border-radius:50%; opacity:0; transition:opacity 0.2s}
+    .menu-close:hover:before {opacity:1}
+}
+
 @media screen and (max-width:1799px) {
     .menu-list {margin:95px 0 0 68px; min-height:calc(100vh - 302px)}
 }
 
 @media screen and (max-width:1399px) {
-    .menu-close {width:36px}
+    .menu {width:242px; padding:14px 0 0 0}
+    .menu-close {width:36px; margin:0 0 0 12px}
     .menu-close svg {width:36px; height:36px}
-    .menu-logo {margin:10px 0 0 42px}
-    .menu-logo img {width:120px}
-    .menu-list {margin:45px 0 0 42px; min-height:calc(100vh - 252px)}
-    .menu-list ul li {margin:30px 0 0 0}
+    .menu-close:before {width:46px; height:46px; margin:-23px 0 0 -23px}
+    .menu-logo {margin:42px 0 0 45px}
+    .menu-logo img {width:154px}
+    .menu-list {margin:81px 0 0 45px; min-height:calc(100vh - 344px); font-size:16px; line-height:22px}
+    .menu-list ul li {margin:26px 0 0 0}
     .menu-list ul li:first-child {margin:0}
-    .menu-phone {padding:30px 0 30px 42px; font-size:18px}
+    .menu-phone {padding:30px 0 30px 45px; font-size:18px}
 }
 
 @media screen and (max-width:1259px) {
@@ -344,6 +379,7 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
     .page-header-container {padding:0 60px 55px 60px}
     .page-header-title {left:60px; top:56px; right:60px}
     .page-header-photo-img {height:540px}
+    .page-header-text {margin-right:-40px}
 }
 
 @media screen and (max-width:1259px) {
@@ -359,6 +395,9 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 .portfolio-link:hover {background:#50535a; color:#fff; text-decoration:none}
 .portfolio-link:active {background:#414349; color:#fff}
 .portfolio-link svg {display:inline-block; vertical-align:middle; width:44px; height:20px; fill:#fff; margin:-2px 0 0 20px}
+
+.portfolio-link.loading {position:relative; pointer-events:none}
+.portfolio-link.loading::after {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(47, 50, 54, 0.88) url(../images/loading.gif) no-repeat center; z-index:1}
 
 @media screen and (max-width:1799px) {
     .portfolio-link {height:120px; line-height:120px; font-size:32px}
@@ -462,18 +501,22 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 .project-header-address {margin:16px 0 0 0; font-size:22px; line-height:33px; color:#acadaf}
 .project-header-size {margin:22px 0 0 0; font-size:28px; line-height:40px; font-weight:normal; color:#acadaf}
 .project-header-photo {display:table-cell; vertical-align:top; width:66.66%; padding:0 15px; line-height:0}
-.project-header-photo-inner {height:660px; background:no-repeat center; background-size:cover; position:relative}
-.project-header-photo-inner .project-item-inner {position:absolute; left:0; top:0; right:0; bottom:0; height:auto}
+.project-header-photo-inner {height:660px; position:relative}
+.project-header-photo-inner .project-item-inner {position:absolute; left:0; top:0; right:0; bottom:0; height:auto; background:no-repeat center; background-size:cover}
 
 @media screen and (max-width:1799px) {
-    .project-header-container {width:50%; padding:125px 70px 49px 70px}
+    .project-header-container {padding:125px 70px 49px 70px}
     .project-header-back {left:32px; top:56px; font-size:32px; line-height:39px}
     .project-header-back a {padding:0 0 0 38px}
     .project-header-back a svg {width:23px; height:16px; margin-top:-4px}
     .project-header-address {margin:20px 0 0 0; font-size:18px; line-height:27px}
     .project-header-size {margin:20px 0 0 0; font-size:24px}
-    .project-header-photo {width:50%}
     .project-header-photo-inner {height:540px}
+}
+
+@media screen and (max-width:1399px) {
+    .project-header-container {width:50%}
+    .project-header-photo {width:50%}
 }
 
 @media screen and (max-width:1259px) {
