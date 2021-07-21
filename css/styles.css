@@ -105,6 +105,8 @@ form.loading::after {content:""; display:block; position:absolute; left:0; top:0
 @media screen and (max-width:1259px) {
     .form-input {margin:30px 0}
     .form-input:first-child {margin-top:20px}
+    .form-input input,
+    .form-input textarea {font-size:24px}
 }
 
 .form-file {margin:30px 0}
@@ -137,17 +139,9 @@ form.loading::after {content:""; display:block; position:absolute; left:0; top:0
 }
 
 .form-ctrl::after {content:""; display:block; clear:both}
-.form-submit {float:left}
-.form-ctrl-message {float:right; max-width:50%; font-size:18px; line-height:27px; color:#fff; max-width:50%; padding:17px 0 0 0}
+.form-submit {float:left; margin:0 32px 0 0}
+.form-ctrl-message {float:left; font-size:18px; line-height:27px; color:#fff; padding:17px 0 0 0}
 .form-ctrl-message img {display:inline-block; vertical-align:middle; margin:-2px 10px 0 0}
-
-@media screen and (max-width:1799px) {
-    .form-ctrl-message {max-width:100%}
-}
-
-@media screen and (max-width:1259px) {
-    .form-ctrl-message {max-width:50%}
-}
 
 @media screen and (min-width:1260px) {
     .on-tablet {display:none !important}
@@ -1003,15 +997,15 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
     .page-header-404 .page-header-photo {display:none}
 }
 
-footer {background:#272a2e; padding:98px 80px; position:relative}
+footer {background:#272a2e; padding:98px 80px; position:relative; height:779px; overflow:hidden}
 footer::after {content:""; display:block; clear:both}
 
 @media screen and (max-width:1799px) {
-    footer {padding:90px 60px}
+    footer {padding:90px 60px; height:675px}
 }
 
 @media screen and (max-width:1259px) {
-    footer {padding:52px 40px 96px 40px}
+    footer {padding:52px 40px 96px 40px; height:auto}
 }
 
 @media screen and (max-width:767px) {
