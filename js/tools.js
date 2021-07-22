@@ -18,9 +18,9 @@ SmoothScroll({
 
 $(document).ready(function() {
 
-    $.validator.addMethod('phoneRU',
+    $.validator.addMethod('phoneMask',
         function(phone_number, element) {
-            return this.optional(element) || phone_number.match(/^\+7 \(\d{3}\) \d{3}\-\d{2}\-\d{2}$/);
+            return this.optional(element) || phone_number.match(/^\+d \(\d{3}\) \d{3}\-\d{2}\-\d{2}$/);
         },
         'Ошибка заполнения'
     );
@@ -423,7 +423,7 @@ function initForm(curForm) {
         }
     });
 
-    curForm.find('input.phoneRU').mask('+7 (000) 000-00-00');
+    curForm.find('input.phoneMask').mask('+0 (000) 000-00-00');
 
     curForm.validate({
         ignore: '',

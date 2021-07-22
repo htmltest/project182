@@ -263,9 +263,9 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 
 .main-welcome {height:100vh; min-height:660px; position:relative}
 .main-welcome-photos {position:absolute; left:0; top:0; bottom:0; right:0}
-.main-welcome-photo {float:left; height:100%; width:33.33%; background:no-repeat center; transition:width 0.3s ease-in}
-.main-welcome-photos:hover .main-welcome-photo {width:23%}
-.main-welcome-photos:hover .main-welcome-photo:hover {width:54%}
+.main-welcome-photo {float:left; height:100%; width:33.33%; position:relative; overflow:hidden}
+.main-welcome-photo-inner {position:absolute; left:0; top:0; right:0; bottom:0; background:no-repeat center; transform:scale(1.001); transition:transform 1s}
+.main-welcome-photo:hover .main-welcome-photo-inner {transform:scale(1.05)}
 .main-welcome-shadow {position:absolute; left:0; bottom:0; right:0; height:336px; background:linear-gradient(0deg, #181818 0%, rgba(24, 24, 24, 0) 100%); opacity:0.8; pointer-events:none}
 .main-welcome-shadow::before {content:""; position:absolute; left:0; bottom:0; right:0; height:473px; background:linear-gradient(0deg, #181818 0%, rgba(24, 24, 24, 0) 100%); opacity:0.25}
 .main-welcome-shadow::after {content:""; position:absolute; left:0; bottom:0; right:0; height:212px; background:linear-gradient(0deg, #181818 0%, rgba(24, 24, 24, 0) 100%); opacity:1}
@@ -282,9 +282,9 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
     .main-welcome-photo {float:none; height:auto; width:auto; position:absolute; left:0; top:0; right:0; bottom:0; background-size:cover}
     .main-welcome-photo:nth-child(1),
     .main-welcome-photo:nth-child(2) {display:none}
-    .main-welcome-photo:nth-child(3) {background-image:url(../files/main-welcome-tablet.jpg) !important}
-    .main-welcome-photos:hover .main-welcome-photo {width:auto}
-    .main-welcome-photos:hover .main-welcome-photo:hover {width:auto}
+    .main-welcome-photo:nth-child(3) .main-welcome-photo-inner {background-image:url(../files/main-welcome-tablet.jpg) !important}
+    .main-welcome-photo-inner {transform:none}
+    .main-welcome-photo:hover .main-welcome-photo-inner {transform:none}
     .main-welcome-shadow {height:auto; top:0; background:linear-gradient(0deg, #0e0b0b 0%, rgba(14, 11, 11, 0) 100%)}
     .main-welcome-shadow::before {background:linear-gradient(0deg, #0e0b0b 0%, rgba(14, 11, 11, 0) 100%); opacity:0.1}
     .main-welcome-shadow::after {display:none}
@@ -293,7 +293,7 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 
 @media screen and (max-width:767px) {
     .main-welcome-title {left:37px; bottom:32px; right:37px}
-    .main-welcome-photo:nth-child(3) {background-image:url(../files/main-welcome-mobile.jpg) !important}
+    .main-welcome-photo:nth-child(3) .main-welcome-photo-inner {background-image:url(../files/main-welcome-mobile.jpg) !important}
 }
 
 .main-item {display:table; width:100%; direction:rtl}
