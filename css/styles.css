@@ -143,6 +143,8 @@ form.loading::after {content:""; display:block; position:absolute; left:0; top:0
 .form-ctrl-message {float:left; font-size:18px; line-height:27px; color:#fff; padding:17px 0 0 0}
 .form-ctrl-message img {display:inline-block; vertical-align:middle; margin:-2px 10px 0 0}
 
+.on-mobile {display:none}
+
 @media screen and (min-width:1260px) {
     .on-tablet {display:none !important}
 }
@@ -153,6 +155,7 @@ form.loading::after {content:""; display:block; position:absolute; left:0; top:0
 
 @media screen and (max-width:767px) {
     .no-mobile {display:none !important}
+    .on-mobile {display:block}
 }
 
 .wrapper {width:100%; min-width:480px; position:relative; overflow:hidden; padding:0 0 0 72px}
@@ -900,11 +903,10 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 .furnishings-how-scheme-item:hover .furnishings-how-scheme-item-icon {background:rgba(214, 49, 49, 0.6)}
 .furnishings-how-scheme-item-icon svg {display:block; width:6px; height:12px; position:absolute; left:50%; top:50%; margin:-6px 0 0 -3px; fill:#fff}
 .furnishings-how-scheme-item-info {display:none}
-.furnishings-how-scheme-info {opacity:0; position:absolute; right:0; bottom:0; background:#dee1e4; color:#000; padding:40px; transition:opacity 0.2s}
+.furnishings-how-scheme-info {opacity:0; position:absolute; right:0; bottom:0; background:#dee1e4; color:#000; transition:opacity 0.2s}
 .furnishings-how-scheme-info.visible {opacity:1}
-.furnishings-how-scheme-item-info-inner {display:table}
-.furnishings-how-scheme-item-info-photo {display:table-cell; vertical-align:middle; line-height:0}
-.furnishings-how-scheme-item-info-text {display:table-cell; vertical-align:middle; padding:0 0 0 53px}
+.furnishings-how-scheme-item-info-inner {display:table; width:368px}
+.furnishings-how-scheme-item-info-text {display:table-cell; vertical-align:middle; padding:0 50px; height:152px}
 .furnishings-how-scheme-item-info-text h4 {margin:0}
 
 @media screen and (max-width:1799px) {
@@ -912,9 +914,7 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
     .furnishings-how-title {font-size:40px; line-height:44px}
     .furnishings-how-title br {display:none}
     .furnishings-how-scheme {margin:48px 0 0 0}
-    .furnishings-how-scheme-info {padding:27px 40px}
-    .furnishings-how-scheme-item-info-photo img {max-height:60px}
-    .furnishings-how-scheme-item-info-text {padding:0 0 0 38px}
+    .furnishings-how-scheme-item-info-text {height:115px}
 }
 
 @media screen and (max-width:1259px) {
@@ -945,6 +945,69 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 @media screen and (max-width:767px) {
     .cooperation-container {padding:56px 40px 49px 40px}
     .cooperation-text {margin:52px 0 0 0}
+}
+
+.contacts::after {content:""; display:block; clear:both}
+.contacts-text {float:left; width:50%}
+.contacts-text-inner {padding:85px 80px}
+.contacts-text h2 {margin:0}
+.contacts-detail {margin:141px 0 0 0; font-size:30px; line-height:40px; font-weight:normal; letter-spacing:-0.02em; text-transform:uppercase}
+.fonts-loaded .contacts-detail {font-family:Steinbeck, sans-serif}
+.contacts-detail-item {margin:30px 0 0 0}
+.contacts-detail-item span {display:none}
+.contacts-detail-item em {font-style:normal}
+.contacts-list {float:right; width:50%}
+.contacts-item {background:#575b63; padding:40px 40px 31px 40px}
+.contacts-item:nth-child(even) {background:#36383d}
+.contacts-item::after {content:""; display:block; clear:both}
+.contacts-item-photo {float:left; width:100px; line-height:0}
+.contacts-item-photo img {display:block; width:100%}
+.contacts-item-text {margin:0 0 0 150px}
+.contacts-item-name {font-weight:normal; font-size:26px; line-height:33px; letter-spacing:-0.03em; text-transform:uppercase}
+.fonts-loaded .contacts-item-name {font-family:Steinbeck, sans-serif}
+.contacts-item-post {margin:9px 0 0 0; line-height:29px; color:#dee1e4}
+.contacts-item-link {margin:6px 0 0 0; color:#dee1e4}
+.contacts-item-link a {color:#dee1e4}
+
+@media screen and (max-width:1799px) {
+    .contacts-text-inner {padding:56px 0 56px 60px}
+    .contacts-text h2 {font-size:32px; line-height:39px}
+    .contacts-detail {margin:166px 0 0 0; font-size:24px; line-height:30px}
+    .contacts-detail-item em {display:none}
+    .contacts-item {padding:30px 30px 33px 30px}
+    .contacts-item-photo {width:80px; position:relative; overflow:hidden}
+    .contacts-item-photo img {width:auto; max-width:none; height:100px; position:relative; left:50%; transform:translateX(-50%)}
+    .contacts-item-text {margin:0 0 0 110px}
+    .contacts-item-name {font-size:20px; line-height:25px; letter-spacing:-0.02em}
+    .contacts-item-post {margin:15px 0 0 0; line-height:22px}
+}
+
+@media screen and (min-width:1260px) {
+    .contacts-text.fixed .contacts-text-inner {position:fixed; top:0}
+}
+
+@media screen and (max-width:1259px) {
+    .contacts-text {float:none; width:auto}
+    .contacts-text-inner {padding:53px 40px 90px 40px}
+    .contacts-text h2 {font-size:32px; line-height:39px}
+    .contacts-detail {margin:98px 0 0 0}
+    .contacts-detail-item {margin:28px 0 0 0}
+    .contacts-detail-item span {display:block; font-size:16px; line-height:24px; font-weight:300; text-transform:none; letter-spacing:0; margin:-18px 0 4px 0}
+    .fonts-loaded .contacts-detail-item span {font-family:Inter, sans-serif}
+    .contacts-list {float:none; width:auto}
+    .contacts-item {background:#575b63}
+}
+
+@media screen and (max-width:767px) {
+    .contacts-text-inner {padding:32px 40px 49px 40px}
+    .contacts-text h2 {font-size:28px; line-height:32px}
+    .contacts-detail {margin:64px 0 0 0; font-size:22px; line-height:25px}
+    .contacts-detail-item span {margin:-13px 0 4px 0}
+    .contacts-item {padding:30px 40px 33px 40px}
+    .contacts-item-photo {width:70px}
+    .contacts-item-photo img {height:90px}
+    .contacts-item-name {font-size:22px}
+    .contacts-item-post {margin:10px 0 0 0; line-height:30px}
 }
 
 .contacts-title {padding:80px 0; text-align:center; font-weight:normal; font-size:66px; line-height:76px; letter-spacing:-0.02em; text-transform:uppercase; background:#36383d}

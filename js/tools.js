@@ -553,4 +553,18 @@ $(window).on('load resize scroll', function() {
         }
     });
 
+    $('.contacts-text').each(function() {
+        if (windowScroll > 0) {
+            $('.contacts-text').addClass('fixed');
+            if (windowScroll + $('.contacts-text-inner').outerHeight() > $('.contacts').offset().top + $('.contacts').height()) {
+                $('.contacts-text-inner').css({'margin-top': ($('.contacts').offset().top + $('.contacts').height()) - (windowScroll + $('.contacts-text-inner').outerHeight())});
+            } else {
+                $('.contacts-text-inner').css({'margin-top': 0});
+            }
+        } else {
+            $('.contacts-text').removeClass('fixed');
+            $('.contacts-text-inner').css({'margin-top': 0});
+        }
+    });
+
 });
