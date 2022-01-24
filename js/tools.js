@@ -103,7 +103,14 @@ $(document).ready(function() {
         for (var i = 0; i < galleryLength; i++) {
             var curTitle = '';
             var curGalleryItem = curGallery.find('.project-item-inner').eq(i);
-            windowHTML +=                   '<div class="window-photo-preview-list-item"><a href="#" style="' + curGalleryItem.attr('style') + '"></a></div>';
+            if (curGalleryItem.find('.project-item-photo').length == 1) {
+                var imgURL = String(curGalleryItem.find('.project-item-photo').css('background-image'));
+            } else {
+                var imgURL = String(curGalleryItem.css('background-image'));
+            }
+            imgURL = imgURL.replace('url("', '');
+            imgURL = imgURL.replace('")', '');
+            windowHTML +=                   '<div class="window-photo-preview-list-item"><a href="#" style="background-image:url(' + imgURL + ')"></a></div>';
         }
         windowHTML +=                   '</div>' +
                                     '</div>' +
@@ -263,13 +270,13 @@ $(document).ready(function() {
         var curAll = curLink.parents().filter('.furnishings-all');
         if (curLink.attr('data-letter') == '') {
             curAll.find('.furnishings-all-menu ul li a.disabled').removeClass('disabled');
-            curAll.find('.furnishings-all-list a.disabled').removeClass('disabled');
+            curAll.find('.furnishings-all-item.disabled').removeClass('disabled');
         } else {
             curAll.find('.furnishings-all-menu ul li a').addClass('disabled');
             curLink.removeClass('disabled');
-            curAll.find('.furnishings-all-list a').addClass('disabled');
+            curAll.find('.furnishings-all-item').addClass('disabled');
             var curLetter = curLink.attr('data-letter').toLowerCase();
-            curAll.find('.furnishings-all-list a').each(function() {
+            curAll.find('.furnishings-all-item').each(function() {
                 var thisLink = $(this);
                 var thisLetter = thisLink.text()[0].toLowerCase();
                 if (thisLetter == curLetter) {
