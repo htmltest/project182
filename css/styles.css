@@ -72,7 +72,7 @@ ol li+li+li+li+li+li+li+li+li+li {content:counter(point)}
 }
 
 form.loading {position:relative}
-form.loading::after {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(47, 50, 54, 0.88) url(../images/loading.gif) no-repeat center; z-index:1}
+form.loading::after {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(47, 50, 54, 0.88) url(../images/loading.svg) no-repeat center; z-index:1}
 
 .form-input {margin:30px 0; position:relative}
 .form-input span {position:absolute; left:0; top:19px; font-size:18px; line-height:27px; color:#fff; opacity:0.6; text-transform:uppercase; transition:top 0.2s, font-size 0.2s, letter-spacing 0.2s}
@@ -396,7 +396,7 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 .portfolio-link svg {display:inline-block; vertical-align:middle; width:44px; height:20px; fill:#fff; margin:-2px 0 0 20px}
 
 .portfolio-link.loading {position:relative; pointer-events:none}
-.portfolio-link.loading::after {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(47, 50, 54, 0.88) url(../images/loading.gif) no-repeat center; z-index:1}
+.portfolio-link.loading::after {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(47, 50, 54, 0.88) url(../images/loading.svg) no-repeat center; z-index:1}
 
 @media screen and (max-width:1799px) {
     .portfolio-link {height:120px; line-height:120px; font-size:32px}
@@ -458,10 +458,12 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
     .portfolio-item:nth-child(4n-3) {background:#36383d}
     .portfolio-item:nth-child(4n-2) {background:#575b63}
     .portfolio-item:nth-child(4n-1) {background:#dee1e4; color:#36383d}
+    .portfolio-item:nth-child(4n-1) a {color:#36383d}
     .portfolio-item:nth-child(4n-1) .portfolio-item-content .btn {color:#575b63; background:#f3f3f3}
     .portfolio-item:nth-child(4n-1) .portfolio-item-content .btn:hover {color:#fff; background:#494d53}
     .portfolio-item:nth-child(4n-1) .portfolio-item-content .btn:active {color:#fff; background:#5b6068}
     .portfolio-item:nth-child(4n) {background:#fff; color:#36383d}
+    .portfolio-item:nth-child(4n) a {color:#36383d}
     .portfolio-item:nth-child(4n) .portfolio-item-content .btn {color:#575b63; background:#f3f3f3}
     .portfolio-item:nth-child(4n) .portfolio-item-content .btn:hover {color:#fff; background:#494d53}
     .portfolio-item:nth-child(4n) .portfolio-item-content .btn:active {color:#fff; background:#5b6068}
@@ -859,20 +861,23 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 .furnishings-all-menu {margin:43px 0 0 0; text-align:center; font-size:0; line-height:0; letter-spacing:-1px}
 .fonts-loaded .furnishings-all-menu {font-family:Steinbeck, sans-serif}
 .furnishings-all-menu ul {display:inline-block; vertical-align:top; margin:0; padding:0; list-style:none}
+.furnishings-all-menu.fixed ul {display:block; position:fixed; left:72px; top:0; right:0; background:#474b51; padding:20px 0}
 .furnishings-all-menu ul li {display:inline-block; margin:0 0 0 40px; padding:0; vertical-align:top; font-size:32px; line-height:40px; text-transform:uppercase; letter-spacing:-0.02em}
 .furnishings-all-menu ul li::before {display:none}
 .furnishings-all-menu ul li:first-child {margin:0}
 .furnishings-all-menu ul li a {color:#fff; text-decoration:none; transition:color 0.2s}
 .furnishings-all-menu ul li a:hover {color:#575b63}
-.furnishings-all-menu ul li a.disabled {color:#575b63}
+.furnishings-all-menu ul li a.disabled {color:#72757c}
 .furnishings-all-menu ul li a.disabled:hover {color:#fff}
 .furnishings-all-menu ul li span {color:#202224}
 .furnishings-all-list {margin:90px 80px 0 80px; column-count:4; column-gap:80px}
+.furnishings-all-group {-webkit-column-break-inside:avoid; page-break-inside:avoid; break-inside:avoid; break-inside:avoid-column}
 .furnishings-all-item.disabled,
 .furnishings-all-item.disabled a {color:#575b63}
 
 @media screen and (max-width:1799px) {
     .furnishings-all-menu {margin:22px 0 0 0}
+    .furnishings-all-menu.fixed ul {left:62px}
     .furnishings-all-menu ul li {margin:0 0 0 20px; font-size:20px; line-height:25px}
     .furnishings-all-menu ul li:first-child {margin:0}
     .furnishings-all-menu ul li a:hover {color:#fff}
@@ -881,12 +886,14 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 
 @media screen and (max-width:1259px) {
     .furnishings-all-menu {margin:15px 80px 0 80px}
+    .furnishings-all-menu.fixed ul {left:0; padding-left:80px; padding-right:80px}
     .furnishings-all-menu ul li {margin:0 0 0 25px; line-height:40px}
     .furnishings-all-menu ul li:first-child {margin:0 15px 0 0}
     .furnishings-all-list {margin:43px 50px 87px 50px; column-count:3; column-gap:30px}
 }
 
 @media screen and (max-width:767px) {
+    .furnishings-all-menu.fixed ul {padding-left:40px; padding-right:40px}
     .furnishings-all-menu {margin:15px 40px 0 40px}
     .furnishings-all-menu ul li {font-size:18px; margin:0 0 0 20px}
     .furnishings-all-menu ul li:first-child {margin:0 20px 0 0}
@@ -1342,3 +1349,7 @@ footer::after {content:""; display:block; clear:both}
 
 .title-row {transform:translate(-40px, 30px); opacity:0}
 .title-row svg {transform:translate(-40px, 0); opacity:0}
+
+.lazy {background:url(../images/loading.svg) no-repeat center}
+.lazy.loading {background:url(../images/loading.svg) no-repeat center !important; background-size:auto auto !important}
+.img.lazy.loading {min-height:20px}
