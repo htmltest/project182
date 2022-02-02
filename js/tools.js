@@ -286,7 +286,7 @@ $(document).ready(function() {
                     thisLink.removeClass('disabled');
                 }
             });
-            $('html, body').animate({'scrollTop': curAll.find('.furnishings-all-item:not(.disabled)').eq(0).offset().top - curAll.find('.furnishings-all-menu ul').height() - 60});
+            $('html, body').animate({'scrollTop': curAll.find('.furnishings-all-item:not(.disabled)').eq(0).offset().top - curAll.find('.furnishings-all-menu ul').height() - 40});
         }
         e.preventDefault();
     });
