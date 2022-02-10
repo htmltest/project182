@@ -4,7 +4,7 @@
 
 html {min-width:480px}
 
-body {min-width:480px; margin:0; padding:0; font:300 22px/33px Arial, sans-serif; color:#fff; background:#2f3236; -webkit-text-size-adjust:100%; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; overflow-anchor:none}
+body {min-width:480px; margin:0; padding:0; font:300 22px/33px Arial, sans-serif; color:#fff; background:#2f3236; -webkit-text-size-adjust:100%; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale}
 .fonts-loaded body {font-family:Inter, sans-serif}
 
 @media screen and (max-width:1799px) {
