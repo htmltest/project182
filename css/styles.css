@@ -998,7 +998,7 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 
 @media screen and (max-width:1259px) {
     .contacts-text {float:none; width:auto}
-    .contacts-text-inner {padding:53px 40px 90px 40px}
+    .contacts-text-inner {padding:53px 40px 90px 40px; margin-top:0 !important}
     .contacts-text h2 {font-size:32px; line-height:39px}
     .contacts-detail {margin:98px 0 0 0}
     .contacts-detail-item {margin:28px 0 0 0}
