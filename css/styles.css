@@ -275,7 +275,7 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 .main-welcome {height:100vh; min-height:660px; position:relative}
 .main-welcome-photos {position:absolute; left:0; top:0; bottom:0; right:0}
 .main-welcome-photo {float:left; height:100%; width:33.33%; position:relative; overflow:hidden}
-.main-welcome-photo-inner {position:absolute; left:0; top:0; right:0; bottom:0; background-repeat:no-repeat !important; background-position:center !important; background-size:cover !important; transform:scale(1.001); transition:transform 1s}
+.main-welcome-photo-inner {position:absolute; left:0; top:0; right:0; bottom:0; background-repeat:no-repeat !important; background-position:center !important; background-size:cover !important; transform:scale(1.005); transition:transform 1s}
 .main-welcome-photo:hover .main-welcome-photo-inner {transform:scale(1.05)}
 .main-welcome-shadow {position:absolute; left:0; bottom:0; right:0; height:336px; background:linear-gradient(0deg, #181818 0%, rgba(24, 24, 24, 0) 100%); opacity:0.8; pointer-events:none}
 .main-welcome-shadow::before {content:""; position:absolute; left:0; bottom:0; right:0; height:473px; background:linear-gradient(0deg, #181818 0%, rgba(24, 24, 24, 0) 100%); opacity:0.25}
