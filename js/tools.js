@@ -20,6 +20,16 @@ SmoothScroll({
 
 $(document).ready(function() {
 
+    $('body').on('click', '.js-link', function() {
+        var curLink = $(this);
+        if (curLink.attr('data-target') == '_blank') {
+            window.open($(this).attr('data-href'));
+        } else {
+            window.location.href = $(this).attr('data-href');
+        }
+        event.stopPropagation();
+    });
+
     $.validator.addMethod('phoneMask',
         function(phone_number, element) {
             return this.optional(element) || phone_number.match(/^\+d \(\d{3}\) \d{3}\-\d{2}\-\d{2}$/);
@@ -303,76 +313,78 @@ $(document).ready(function() {
     });
 
     $('.furnishings-item-title, .furnishings-item-slider-item-inner').click(function(e) {
-        var curGallery = $(this).parents().filter('.furnishings-item');
+        if (e.target == this) {
+            var curGallery = $(this).parents().filter('.furnishings-item');
 
-        var curIndex = 0;
-        if ($(this).hasClass('furnishings-item-slider-item-inner')) {
-            curIndex = curGallery.find('.furnishings-item-slider-item-inner').index($(this));
-        }
+            var curIndex = 0;
+            if ($(this).hasClass('furnishings-item-slider-item-inner')) {
+                curIndex = curGallery.find('.furnishings-item-slider-item-inner').index($(this));
+            }
 
-        var curPadding = $('.wrapper').width();
-        var curWidth = $(window).width();
-        if (curWidth < 480) {
-            curWidth = 480;
-        }
-        var curScroll = $(window).scrollTop();
-        $('html').addClass('window-furnishings-open');
-        curPadding = $('.wrapper').width() - curPadding;
-        $('body').css({'margin-right': curPadding + 'px'});
+            var curPadding = $('.wrapper').width();
+            var curWidth = $(window).width();
+            if (curWidth < 480) {
+                curWidth = 480;
+            }
+            var curScroll = $(window).scrollTop();
+            $('html').addClass('window-furnishings-open');
+            curPadding = $('.wrapper').width() - curPadding;
+            $('body').css({'margin-right': curPadding + 'px'});
 
-        var windowHTML =    '<div class="window-furnishings">';
+            var windowHTML =    '<div class="window-furnishings">';
 
-        windowHTML +=           '<a href="#" class="window-furnishings-close"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#icon-menu-close"></use></svg></a>';
+            windowHTML +=           '<a href="#" class="window-furnishings-close"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#icon-menu-close"></use></svg></a>';
 
-        windowHTML +=           '<div class="window-furnishings-slider">' +
-                                    '<div class="window-furnishings-slider-list">';
+            windowHTML +=           '<div class="window-furnishings-slider">' +
+                                        '<div class="window-furnishings-slider-list">';
 
-        var galleryLength = curGallery.find('.furnishings-item-slider-item-inner').length;
-        for (var i = 0; i < galleryLength; i++) {
-            var curGalleryItem = curGallery.find('.furnishings-item-slider-item-inner').eq(i);
-            windowHTML +=               '<div class="window-furnishings-slider-list-item">' +
-                                            '<img src="' + curGalleryItem.attr('href') + '" alt="" />' +
-                                        '</div>';
-        }
-        windowHTML +=               '</div>' +
-                                '</div>';
+            var galleryLength = curGallery.find('.furnishings-item-slider-item-inner').length;
+            for (var i = 0; i < galleryLength; i++) {
+                var curGalleryItem = curGallery.find('.furnishings-item-slider-item-inner').eq(i);
+                windowHTML +=               '<div class="window-furnishings-slider-list-item">' +
+                                                '<img src="' + curGalleryItem.attr('href') + '" alt="" />' +
+                                            '</div>';
+            }
+            windowHTML +=               '</div>' +
+                                    '</div>';
 
-        windowHTML +=           '<div class="window-furnishings-title">' + curGallery.find('.furnishings-item-title').html() + '</div>';
+            windowHTML +=           '<div class="window-furnishings-title">' + curGallery.find('.furnishings-item-title').html() + '</div>';
 
-        windowHTML +=       '</div>';
+            windowHTML +=       '</div>';
 
-        $('.window-furnishings').remove();
-        $('body').append(windowHTML);
+            $('.window-furnishings').remove();
+            $('body').append(windowHTML);
 
-        $('.wrapper').css({'top': -curScroll});
-        $('.wrapper').data('curScroll', curScroll);
-        $('meta[name="viewport"]').attr('content', 'width=' + curWidth);
+            $('.wrapper').css({'top': -curScroll});
+            $('.wrapper').data('curScroll', curScroll);
+            $('meta[name="viewport"]').attr('content', 'width=' + curWidth);
 
-        $('.window-furnishings-slider-list').slick({
-            infinite: false,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-prev"></use></svg></button>',
-            nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-next"></use></svg></button>',
-            dots: false,
-            variableWidth: true,
-            initialSlide: curIndex,
-            responsive: [
-                {
-                    breakpoint: 1259,
-                    settings: {
-                        arrows: false
+            $('.window-furnishings-slider-list').slick({
+                infinite: false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-prev"></use></svg></button>',
+                nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-next"></use></svg></button>',
+                dots: false,
+                variableWidth: true,
+                initialSlide: curIndex,
+                responsive: [
+                    {
+                        breakpoint: 1259,
+                        settings: {
+                            arrows: false
+                        }
+                    },
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            variableWidth: false,
+                            arrows: true
+                        }
                     }
-                },
-                {
-                    breakpoint: 767,
-                    settings: {
-                        variableWidth: false,
-                        arrows: true
-                    }
-                }
-            ]
-        });
+                ]
+            });
+        }
 
         e.preventDefault();
     });
