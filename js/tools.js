@@ -285,18 +285,27 @@ $(document).ready(function() {
             curAll.find('.furnishings-all-item.disabled').removeClass('disabled');
             $('html, body').animate({'scrollTop': curAll.offset().top});
         } else {
-            curAll.find('.furnishings-all-menu ul li a').addClass('disabled');
-            curLink.removeClass('disabled');
-            curAll.find('.furnishings-all-item').addClass('disabled');
-            var curLetter = curLink.attr('data-letter').toLowerCase();
-            curAll.find('.furnishings-all-item').each(function() {
-                var thisLink = $(this);
-                var thisLetter = thisLink.text()[0].toLowerCase();
-                if (thisLetter == curLetter) {
-                    thisLink.removeClass('disabled');
-                }
-            });
-            $('html, body').animate({'scrollTop': curAll.find('.furnishings-all-item:not(.disabled)').eq(0).offset().top - curAll.find('.furnishings-all-menu ul').height() - 40});
+            if (!curLink.hasClass('active')) {
+                curAll.find('.furnishings-all-menu ul li.active').removeClass('active');
+                curLink.addClass('active');
+                curAll.find('.furnishings-all-menu ul li a').addClass('disabled');
+                curLink.removeClass('disabled');
+                curAll.find('.furnishings-all-item').addClass('disabled');
+                var curLetter = curLink.attr('data-letter').toLowerCase();
+                curAll.find('.furnishings-all-item').each(function() {
+                    var thisLink = $(this);
+                    var thisLetter = thisLink.text()[0].toLowerCase();
+                    if (thisLetter == curLetter) {
+                        thisLink.removeClass('disabled');
+                    }
+                });
+                $('html, body').animate({'scrollTop': curAll.find('.furnishings-all-item:not(.disabled)').eq(0).offset().top - curAll.find('.furnishings-all-menu ul').height() - 40});
+            } else {
+                curLink.removeClass('active');
+                curAll.find('.furnishings-all-menu ul li a.disabled').removeClass('disabled');
+                curAll.find('.furnishings-all-item.disabled').removeClass('disabled');
+                $('html, body').animate({'scrollTop': curAll.offset().top});
+            }
         }
         e.preventDefault();
     });

@@ -240,6 +240,7 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
     .menu-list ul li a::after {content:""; display:block; position:absolute; left:0; bottom:-5px; right:0; height:1px; background:#fff; transform:scale(0, 1); transform-origin:left center; transition:transform 0.2s}
     .menu-list ul li a:hover::after {transform:scale(1, 1)}
 }
+.menu-list ul li.active a::before {content:""; display:block; position:absolute; left:0; bottom:-5px; right:0; height:1px; transform:none; background:#E20E0E; transform-origin:left center; transition:transform 0.2s}
 .menu-phone {padding:50px 0 50px 68px; font-size:19px; line-height:22px; font-weight:normal}
 .menu-phone a {color:#fff; text-decoration:none; position:relative}
 .menu-phone a::after {content:""; display:block; position:absolute; left:0; bottom:-5px; right:0; height:1px; background:#fff; transform:scale(0, 1); transform-origin:left center; transition:transform 0.2s}
