@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="css/styles.css" />
         <link rel="stylesheet" href="js/slick/slick.css" />
         <link rel="stylesheet" href="js/mcustomscrollbar/jquery.mCustomScrollbar.css" />
+        <link rel="stylesheet" href="js/swiper/swiper-bundle.min.css" />
 
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width" />
@@ -24,19 +25,28 @@
 
             <!-- menu -->
             <div class="menu">
-                <a href="#" class="menu-close"><svg><use xlink:href="images/sprite.svg#icon-menu-close"></use></svg></a>
-                <div class="menu-logo"><a href="#"><img src="images/menu-logo.svg" alt="" /></a></div>
-                <div class="menu-list">
-                    <ul>
-                        <li><a href="#">О компании</a></li>
-                        <li class="active"><a href="#">Портфолио</a></li>
-                        <li><a href="#">Услуги</a></li>
-                        <li><a href="#">Мебель и свет</a></li>
-                        <li><a href="#">Сотрудничество</a></li>
-                        <li><a href="#">Контакты</a></li>
-                    </ul>
+                <div class="menu-inner">
+                    <a href="#" class="menu-close"><svg><use xlink:href="images/sprite.svg#icon-menu-close"></use></svg></a>
+                    <div class="menu-logo"><a href="#"><img src="images/menu-logo.svg" alt="" /></a></div>
+                    <div class="menu-list">
+                        <ul>
+                            <li><a href="#">О компании</a></li>
+                            <li class="active"><a href="#">Портфолио</a></li>
+                            <li>
+                                <a href="#">Услуги и цены</a>
+                                <ul>
+                                    <li><a href="#">Дизайн интерьеров</a></li>
+                                    <li><a href="#">Элитный ремонт</a></li>
+                                    <li><a href="#">Комплектация объектов</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Мебель и свет</a></li>
+                            <li><a href="#">Сотрудничество</a></li>
+                            <li><a href="#">Контакты</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-phone"><a href="tel:+79166974585">+7 916 697-45-85</a></div>
                 </div>
-                <div class="menu-phone"><a href="tel:+79166974585">+7 916 697-45-85</a></div>
             </div>
             <!-- menu END -->
 
@@ -255,52 +265,142 @@
             <a href="ajax/portfolio-more.html" class="portfolio-link portfolio-ajax-link">Показать ещё <svg><use xlink:href="images/sprite.svg#link-arrow"></use></svg></a>
 
             <footer>
-                <div class="footer-contacts">
-                    <div class="footer-contacts-row">
-                        <div class="footer-contacts-label">Адрес</div>
-                        <div class="footer-contacts-text">Москва,<br /> ул. Новослободская, д. 62/15</div>
-                    </div>
-                    <div class="footer-contacts-row">
-                        <div class="footer-contacts-label">Номер</div>
-                        <div class="footer-contacts-text"><a href="tel:+7555762240">+7 (555) 76-22-40</a></div>
-                    </div>
-                    <div class="footer-contacts-row">
-                        <div class="footer-contacts-label">E-mail</div>
-                        <div class="footer-contacts-text"><a href="mailto:salon@house-1.ru">salon@house-1.ru</a></div>
-                    </div>
-                </div>
-
-                <div class="footer-feedback">
-                    <div class="footer-feedback-title">Связаться с нами</div>
-                    <form action="ajax/success.html" method="post" class="ajax-form">
-                        <div class="form-input"><span>Имя<em>*</em></span><input type="text" name="name" value="" class="required" /></div>
-                        <div class="form-input"><span>E-mail<em>*</em></span><input type="text" name="email" value="" class="required email" /></div>
-                        <div class="form-input"><span>Телефон<em>*</em></span><input type="text" name="phone" value="" class="required phoneMask" /></div>
-                        <div class="form-input"><span>Сообщение</span><textarea name="message" rows="5" cols="10"></textarea></div>
-                        <div class="form-file">
-                            <div class="form-file-input"><input type="file" name="file" /><span data-placeholder="Приложить файл"><em>Приложить файл</em></span><a href="#" class="form-file-remove"></a></div>
+                <div class="footer-top">
+                    <div class="footer-contacts">
+                        <div class="footer-logo"><img src="images/menu-logo.svg" alt="" /></div>
+                        <div class="footer-contacts-list">
+                            <div class="footer-contacts-item">Москва,<br /> ул.&nbsp;Новослободская, д.&nbsp;62/15</div>
+                            <div class="footer-contacts-item"><a href="tel:+7555762240">+7 (555) 76-22-40</a></div>
+                            <div class="footer-contacts-item"><a href="mailto:salon@house-1.ru">salon@house-1.ru</a></div>
+                            <div class="footer-contacts-item"><a href="#" target="_blank">Instagram</a></div>
                         </div>
-                        <div class="form-ctrl">
-                            <div class="form-submit"><input type="submit" value="Отправить" class="btn" /></div>
-                            <div class="form-ctrl-message"></div>
+                    </div>
+
+                    <div class="footer-feedback">
+                        <div class="footer-feedback-title">Связаться с нами</div>
+                        <form action="ajax/success.html" method="post" class="ajax-form">
+                            <div class="footer-feedback-row">
+                                <div class="footer-feedback-col">
+                                    <div class="form-input"><span>Имя<em>*</em></span><input type="text" name="name" value="" class="required" /></div>
+                                    <div class="form-input"><span>E-mail<em>*</em></span><input type="text" name="email" value="" class="required email" /></div>
+                                </div>
+                                <div class="footer-feedback-col">
+                                    <div class="form-input"><span>Телефон<em>*</em></span><input type="text" name="phone" value="" class="required phoneMask" /></div>
+                                    <div class="form-file">
+                                        <div class="form-file-input"><input type="file" name="file" /><span data-placeholder="Приложить файл"><em>Приложить файл</em></span><a href="#" class="form-file-remove"></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-input"><span>Сообщение</span><textarea name="message" rows="5" cols="10"></textarea></div>
+                            <div class="form-checkbox"><label><input type="checkbox" name="policy" checked="checked" class="required"><span>Согласен с <a href="#">политикой обработки данных</a></span></label></div>
+                            <div class="form-ctrl">
+                                <div class="form-submit"><input type="submit" value="Отправить" class="btn" /></div>
+                                <div class="form-ctrl-message"></div>
+                            </div>
+                            <div class="form-notice">This site is protected by reCAPTCHA and the Google <span class="js-link" data-href="https://policies.google.com/privacy" data-target="_blank">Privacy Policy</span> and <span class="js-link" data-href="https://policies.google.com/terms" data-target="_blank">Terms of Service</span> apply.</div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="footer-menu">
+                        <div class="footer-menu-main">
+                            <ul>
+                                <li><a href="#">Главная</a></li>
+                                <li><a href="#">О компании</a></li>
+                                <li><a href="#">Портфолио</a></li>
+                                <li><a href="#">Мебель и свет</a></li>
+                                <li><a href="#">Сотрудничество</a></li>
+                                <li><a href="#">Контакты</a></li>
+                            </ul>
                         </div>
-                        <div class="form-notice">This site is protected by reCAPTCHA and the Google <span class="js-link" data-href="https://policies.google.com/privacy" data-target="_blank">Privacy Policy</span> and <span class="js-link" data-href="https://policies.google.com/terms" data-target="_blank">Terms of Service</span> apply.</div>
-                    </form>
-                </div>
-
-                <div class="footer-social">
-                    <p><a href="#" target="_blank">Facebook</a></p>
-                    <p><a href="#" target="_blank">Instagram</a></p>
-                </div>
-
-                <div class="footer-copyrights">
-                    <p>Сайт сделан в <a href="https://bilingo.ru" target="_blank">bilingo.ru</a></p>
-                    <p>© 2003-2021 «HOUSE STUDIO»</p>
+                        <div class="footer-menu-services">
+                            <div class="footer-menu-services-title"><a href="#">Услуги и цены</a></div>
+                            <div class="footer-menu-services-menu">
+                                <ul>
+                                    <li>
+                                        <a href="#">Дизайн интерьеров</a>
+                                        <ul>
+                                            <li><a href="#">Современный</a></li>
+                                            <li><a href="#">Хай-тек</a></li>
+                                            <li><a href="#">Лофт</a></li>
+                                            <li><a href="#">Классика</a></li>
+                                            <li><a href="#">Скандинавский</a></li>
+                                            <li><a href="#">Неоклассика</a></li>
+                                            <li><a href="#">Минимализм</a></li>
+                                            <li><a href="#">Арт-деко</a></li>
+                                            <li><a href="#">Модерн</a></li>
+                                            <li><a href="#">Прованс</a></li>
+                                            <li><a href="#">Кухня</a></li>
+                                            <li><a href="#">Комната</a></li>
+                                            <li><a href="#">Апартаменты</a></li>
+                                            <li><a href="#">Гостиные</a></li>
+                                            <li><a href="#">Столовые</a></li>
+                                            <li><a href="#">Спальни</a></li>
+                                            <li><a href="#">Детские</a></li>
+                                            <li><a href="#">Кабинеты</a></li>
+                                            <li><a href="#">Ванные комнаты</a></li>
+                                            <li><a href="#">Бильярдные</a></li>
+                                            <li><a href="#">Домашние кинотеатры</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Элитный ремонт</a>
+                                        <ul>
+                                            <li><a href="#">Квартир</a>
+                                                <ul>
+                                                    <li><a href="#">Студия</a></li>
+                                                    <li><a href="#">Свободная планировка</a></li>
+                                                    <li><a href="#">2-х комнатные</a></li>
+                                                    <li><a href="#">3-х комнатные</a></li>
+                                                    <li><a href="#">4-х комнатные</a></li>
+                                                    <li><a href="#">Новостройки</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="#">Домов</a></li>
+                                            <li><a href="#">Офисов</a></li>
+                                            <li><a href="#">Коттеджей</a></li>
+                                            <li><a href="#">Таунхаус</a></li>
+                                            <li><a href="#">Прайс-лист</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Комплектация объектов</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-info">
+                        <div class="footer-data">
+                            <div class="footer-data-title">Наши реквизиты</div>
+                            <div class="footer-data-text">
+                                <p>ООО &laquo;АЛ-ДЕКО&raquo;</p>
+                                <p>Юридический адрес: 127055, город Москва, улица Новослободская, дом&nbsp;62, корпус&nbsp;15, подвал. пом IX&nbsp;комн.&nbsp;1, 1А, 1Б, 2-4</p>
+                                <p>ИНН: 7716864075</p>
+                                <p>ОГРН: 1177746689834</p>
+                                <p>КПП: 770701001</p>
+                                <p>Р/с: 40702810300000052692&nbsp;в АО&nbsp;&laquo;Райффайзенбанк&raquo; г.&nbsp;Москва</p>
+                                <p>К/с &#8470;&nbsp;30101810200000000700</p>
+                                <p>БИК 044525700</p>
+                                <p>Без НДС</p>
+                            </div>
+                        </div>
+                        <div class="footer-copyrights">
+                            <p>Сайт сделан в <a href="https://bilingo.ru" target="_blank">bilingo.ru</a></p>
+                            <p>&copy;&nbsp;2003-2025 &laquo;HOUSE STUDIO&raquo;</p>
+                        </div>
+                    </div>
                 </div>
             </footer>
 
         </div>
         <!-- wrapper END -->
+
+        <div class="social-links">
+            <a href="#" target="_blank"><svg><use xlink:href="images/sprite.svg#social-whatsapp"></use></svg></a>
+            <a href="#" target="_blank"><svg><use xlink:href="images/sprite.svg#social-telegram"></use></svg></a>
+        </div>
 
         <script>
             var pathTemplate = './';
@@ -318,6 +418,7 @@
         <script src="js/mcustomscrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="js/SmoothScroll.min.js"></script>
         <script src="js/lazyload.min.js"></script>
+        <script src="js/swiper/swiper-bundle.min.js"></script>
         <script src="js/tools.js"></script>
 
     </body>

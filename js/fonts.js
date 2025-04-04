@@ -8,6 +8,7 @@ window.onload = function() {
 
     if (sessionStorage.fontsLoaded) {
         html.classList.add('fonts-loaded');
+        $(window).trigger('resize');
     } else {
         var script = document.createElement('script');
         script.src = pathTemplate + 'js/fontfaceobserver.js';
@@ -35,6 +36,7 @@ window.onload = function() {
             ]).then(function () {
                 html.classList.add('fonts-loaded');
                 sessionStorage.fontsLoaded = true;
+                $(window).trigger('resize');
             });
         };
         document.head.appendChild(script);
