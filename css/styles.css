@@ -630,23 +630,24 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 }
 
 .project {margin:0 -15px 30px -15px; display:flex; flex-wrap:wrap}
+.project-difheight {align-items:flex-start}
 .project-item {min-width:33.33%; max-width:33.33%; padding:30px 15px 0 15px; display:flex}
 .project-item-big {min-width:66.66%; max-width:66.66%}
-.project-item-inner {display:flex; width:100%; position:relative; height:660px; overflow:hidden}
+.project-item-inner {display:flex; width:100%; position:relative; min-height:660px; overflow:hidden}
 .project-item-inner::after {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(10, 10, 10, 0.6); opacity:0; transition:opacity 0.2s}
 .project-item-inner:hover::after {opacity:1}
 .project-item-photo {display:block; position:absolute; left:0; top:0; right:0; bottom:-100px; background:no-repeat center; background-size:cover !important}
-.project-item-info {background:#FFFFFF; width:100%; padding:60px; height:660px; overflow:hidden}
+.project-item-info {background:#FFFFFF; width:100%; padding:60px; min-height:660px; overflow:hidden}
 .project-item-info-item {max-width:317px; margin:13px 0 0 0; color:#2F3236}
 .project-item-info-item:first-child {margin:0}
 .project-item-info-item-title {font-weight:300; font-size:18px; line-height:27px}
 .project-item-info-item-value {margin:4px 0 0 0; font-weight:normal; font-size:24px; line-height:30px; letter-spacing:-0.02em; text-transform:uppercase}
 .project-item-info-item-value sup {vertical-align:top; font-size:0.6em; line-height:1em}
 .fonts-loaded .project-item-info-item-value {font-family:Steinbeck, sans-serif}
-.project-item-about {background:#575B63; width:100%; padding:60px; height:660px; overflow:hidden; color:#FFFFFF}
+.project-item-about {background:#575B63; width:100%; padding:60px; min-height:660px; overflow:hidden; color:#FFFFFF}
 .project-item-about-text {margin:12px 0 0 0; max-width:750px; font-weight:300; font-size:18px; line-height:27px}
 .project-item-about-text p {margin:12px 0}
-.project-item-fabric {background:#DEE1E4; width:100%; padding:60px; height:660px; overflow:hidden; color:#2F3236; font-weight:normal; font-size:24px; line-height:30px; letter-spacing:-0.02em; text-transform:uppercase}
+.project-item-fabric {background:#DEE1E4; width:100%; padding:60px; min-height:660px; overflow:hidden; color:#2F3236; font-weight:normal; font-size:24px; line-height:30px; letter-spacing:-0.02em; text-transform:uppercase}
 .fonts-loaded .project-item-fabric {font-family:Steinbeck, sans-serif}
 .project-item-fabric a {color:#2F3236; text-decoration:none}
 .project-item-fabric a:hover {text-decoration:underline}
@@ -659,14 +660,14 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 @media screen and (max-width:1799px) {
     .project {margin:0 -10px 20px -10px}
     .project-item {padding:20px 10px 0 10px}
-    .project-item-inner {height:480px}
-    .project-item-info {height:480px; padding:20px 36px 20px 43px}
+    .project-item-inner {min-height:480px}
+    .project-item-info {min-height:480px; padding:20px 36px 20px 43px}
     .project-item-info-item {margin:8px 0 0 0; max-width:236px}
     .project-item-info-item-title {font-size:16px; line-height:24px}
     .project-item-info-item-value {margin:0; font-size:20px; line-height:25px}
-    .project-item-about {padding:43px 60px; height:480px}
+    .project-item-about {padding:43px 60px; min-height:480px}
     .project-item-about-text {font-size:16px; line-height:24px}
-    .project-item-fabric {padding:32px 30px; height:480px; font-size:20px; line-height:25px}
+    .project-item-fabric {padding:32px 30px; min-height:480px; font-size:20px; line-height:25px}
     .project-item-fabric-list {margin:25px 0 0 0}
     .project-item-fabric-list ul li {padding:0 0 0 30px}
     .project-item-fabric-list ul li::before {left:12px; top:12px}
