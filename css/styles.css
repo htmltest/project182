@@ -1791,8 +1791,9 @@ footer {background:#272A2E; padding:80px; position:relative}
 .design-trends {padding:180px 0 0 0}
 .design-trends-services {padding:180px 0}
 .design-trends-title {text-align:center}
-.design-trends-list {margin:40px auto 0 auto; max-width:1176px; display:flex; flex-wrap:wrap}
-.design-trends-item {min-width:calc(50% - 80px); max-width:calc(50% - 80px); margin:20px 40px 0 40px; padding:0 10px; display:flex; align-items:center; justify-content:center; text-align:center; height:60px; background:#36383D; color:#FFFFFF; font-weight:500; font-size:14px; line-height:20px; letter-spacing:0.04em; text-transform:uppercase; text-decoration:none; transition:color 0.2s}
+.design-trends-list {margin:40px auto 0 auto; max-width:1176px; display:flex}
+.design-trends-list-col {min-width:calc(50% - 80px); max-width:calc(50% - 80px); margin:0 40px}
+.design-trends-item {margin:20px 0 0 0; padding:0 10px; display:flex; align-items:center; justify-content:center; text-align:center; height:60px; background:#36383D; color:#FFFFFF; font-weight:500; font-size:14px; line-height:20px; letter-spacing:0.04em; text-transform:uppercase; text-decoration:none; transition:color 0.2s}
 .design-trends-item:hover {color:rgba(255, 255, 255, 0.5); text-decoration:none}
 
 @media screen and (max-width:1799px) {
@@ -1811,7 +1812,7 @@ footer {background:#272A2E; padding:80px; position:relative}
     .design-trends-services {padding:80px 40px}
     .design-trends-title {margin:0 -10px}
     .design-trends-list {margin:4px -10px 0 -10px}
-    .design-trends-item {min-width:calc(50% - 20px); max-width:calc(50% - 20px); margin:20px 10px 0 10px}
+    .design-trends-list-col {min-width:calc(50% - 20px); max-width:calc(50% - 20px); margin:20px 10px 0 10px}
 }
 
 .design-seo {padding:180px 0; margin:0 auto; max-width:834px}
