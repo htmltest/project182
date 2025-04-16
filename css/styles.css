@@ -1747,7 +1747,7 @@ footer {background:#272A2E; padding:80px; position:relative}
 .design-price-item-cost {margin:26px 0 0 0}
 .design-price-item-cost span {opacity:0.4}
 .design-price-item-cost sup {vertical-align:top; font-size:0.6em; line-height:1em}
-.design-price-item-time {font-size:18px; line-height:27px}
+.design-price-item-time {font-size:18px; line-height:27px; color:#DEE1E4}
 
 @media screen and (max-width:1799px) {
     .design-price {padding:120px 0 0 0}
