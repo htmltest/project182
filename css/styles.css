@@ -501,6 +501,8 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 .portfolio-item:nth-child(1) {width:50%; padding-right:30px}
 .portfolio-item:nth-child(2) {width:50%; padding-left:0}
 .portfolio-item-inner {position:relative; height:660px; text-decoration:none; display:block}
+.portfolio-item-inner::after {content:""; position:absolute; right:20px; top:20px; width:18px; height:18px; background:url(../images/portfolio-item-arrow.svg) no-repeat; background-size:100%; opacity:0; transition:opacity 0.2s}
+.portfolio-item-inner:hover::after {opacity:1}
 .portfolio-item-preview {position:absolute; left:0; top:0; right:0; bottom:0; overflow:hidden}
 .portfolio-item-preview-inner {position:absolute; left:0; top:0; right:0; bottom:-100px; background:no-repeat center; background-size:cover !important}
 .portfolio-item-content {position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(10, 10, 10, 0.6); opacity:0; transition:opacity 0.2s; padding:85px 80px 90px 80px}
@@ -514,7 +516,7 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 .portfolio-item-address {margin:27px 0 0 0; font-size:22px; line-height:33px; letter-spacing:0}
 .portfolio-item:nth-child(1),
 .portfolio-item:nth-child(2) .portfolio-item-address {max-width:56%}
-.portfolio-item-content .btn {position:absolute; left:80px; bottom:90px}
+.portfolio-item-content .btn {position:absolute; left:80px; bottom:90px; display:none}
 
 @media screen and (max-width:1799px) {
     .portfolio {margin:0 -10px 20px -10px}
@@ -539,6 +541,7 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
     .portfolio-item:nth-child(2) {padding-left:0; width:auto}
     .portfolio-item-inner {display:table; height:auto; width:100%}
     .portfolio-item:nth-child(even) {direction:rtl}
+    .portfolio-item-inner::after {display:none}
     .portfolio-item-preview {display:table-cell; vertical-align:middle; width:50%; position:relative; left:auto; top:auto; right:auto; bottom:auto; direction:ltr}
     .portfolio-item-preview-inner {position:relative; left:auto; top:auto; right:auto; bottom:auto; height:420px}
     .portfolio-item-content {display:table-cell; vertical-align:middle; padding:0; position:relative; background:none; opacity:1; padding:0 40px; direction:ltr}
@@ -560,7 +563,7 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
     .portfolio-item-size {display:none}
     .portfolio-item-address {margin:10px 0 0 0; font-size:18px; line-height:27px}
     .portfolio-item-size-tablet {display:block; margin:16px 0 0 0; font-size:18px; line-height:27px; letter-spacing:0}
-    .portfolio-item-content .btn {position:relative; margin:26px 0 0 0; left:auto; bottom:auto}
+    .portfolio-item-content .btn {position:relative; margin:26px 0 0 0; left:auto; bottom:auto; display:inline-block}
 }
 
 @media screen and (max-width:767px) {
