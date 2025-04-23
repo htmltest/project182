@@ -728,34 +728,36 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 }
 
 .project-other::after {content:""; display:block; clear:both}
-.project-other-item {float:left; width:50%; padding:0 15px 0 0}
+.project-other-item {width:50%; padding:0 15px 0 0}
+.project-other-item.prev {float:left}
+.project-other-item.next {float:right}
 .project-other-item:last-child {padding:0 0 0 15px}
 .project-other-item a {display:block; position:relative; height:360px; text-decoration:none}
 .project-other-item-bg {position:absolute; left:0; top:0; right:0; bottom:0; background:no-repeat center; background-size:cover !important; opacity:0.2; transition:opacity 0.2s}
 .project-other-item a:hover .project-other-item-bg {opacity:0.4}
 .project-other-item svg {display:block; width:81px; height:24px; position:absolute; left:80px; top:50%; margin-top:-12px; fill:#fff; transition:transform 0.2s}
 .project-other-item a:hover svg {transform:translateX(-10px)}
-.project-other-item:last-child svg {left:auto; right:80px}
-.project-other-item:last-child a:hover svg {transform:translateX(10px)}
+.project-other-item.next svg {left:auto; right:80px}
+.project-other-item.next a:hover svg {transform:translateX(10px)}
 .project-other-item-title {position:absolute; right:65px; top:50%; font-size:40px; line-height:48px; letter-spacing:-0.02em; text-transform:uppercase; text-align:right; margin-top:-48px}
-.project-other-item:last-child .project-other-item-title {right:auto; left:65px; text-align:left}
+.project-other-item.next .project-other-item-title {right:auto; left:65px; text-align:left}
 
 @media screen and (max-width:1799px) {
     .project-other-item {padding:0 10px 0 0}
-    .project-other-item:last-child {padding:0 0 0 10px}
+    .project-other-item.next {padding:0 0 0 10px}
     .project-other-item a {height:240px}
     .project-other-item svg {left:60px}
-    .project-other-item:last-child svg {right:60px}
+    .project-other-item.next svg {right:60px}
     .project-other-item-title {right:60px; font-size:32px; line-height:39px; margin-top:-39px}
-    .project-other-item:last-child .project-other-item-title {left:60px}
+    .project-other-item.next .project-other-item-title {left:60px}
 }
 
 @media screen and (max-width:1259px) {
     .project-other-item a {height:181px}
     .project-other-item svg {left:40px; top:40px; margin-top:0; width:41px; height:16px}
-    .project-other-item:last-child svg {right:40px}
+    .project-other-item.next svg {right:40px}
     .project-other-item-title {right:auto; left:40px; top:71px; margin-top:0; text-align:left}
-    .project-other-item:last-child .project-other-item-title {left:auto; right:40px; text-align:right}
+    .project-other-item.next .project-other-item-title {left:auto; right:40px; text-align:right}
 }
 
 @media screen and (max-width:767px) {
