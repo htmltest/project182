@@ -478,6 +478,7 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 }
 
 .portfolio-link {display:block; background:#6c707a; height:180px; color:#fff; text-decoration:none; text-align:center; text-transform:uppercase; font-weight:normal; font-size:40px; line-height:180px; letter-spacing:-0.02em; transition:background 0.2s}
+.portfolio-link-dark {background:#575B63}
 .fonts-loaded .portfolio-link {font-family:Steinbeck, sans-serif}
 .portfolio-link:hover {background:#50535a; color:#fff; text-decoration:none}
 .portfolio-link:active {background:#414349; color:#fff}
@@ -1272,7 +1273,7 @@ footer {background:#272A2E; padding:80px; position:relative}
 .footer-menu-services-title a {color:#FFFFFF; text-decoration:none}
 .footer-menu-services-title a:hover {text-decoration:underline}
 .footer-menu-services-menu {color:rgba(255, 255, 255, 0.6); font-weight:normal; font-size:16px; line-height:22px}
-.footer-menu-services-menu a {color:rgba(255, 255, 255, 0.6); text-decoration:none}
+.footer-menu-services-menu a {color:rgba(255, 255, 255, 0.6); text-decoration:none; display:inline-block}
 .footer-menu-services-menu a:hover {text-decoration:underline}
 .footer-menu-services-menu > ul {margin:12px 0 -15px 0; padding:0; list-style:none; column-count:2; column-gap:60px; text-transform:uppercase}
 .footer-menu-services-menu > ul > li {margin:0; padding:0 0 15px 0; -webkit-column-break-inside:avoid; page-break-inside:avoid; break-inside:avoid; break-inside:avoid-column}
@@ -1292,6 +1293,8 @@ footer {background:#272A2E; padding:80px; position:relative}
     .footer-menu-services-menu > ul {margin:12px 0 -12px 0; column-gap:32px}
     .footer-menu-services-menu > ul > li {padding:0 0 12px 0}
     .footer-menu-services-menu > ul > li > ul > li {margin:0}
+    .footer-menu-services-menu > ul > li > ul > li > ul {margin:0}
+    .footer-menu-services-menu > ul > li > ul > li > ul > li {margin:0}
 }
 
 @media screen and (max-width:1259px) {
@@ -1665,6 +1668,7 @@ footer {background:#272A2E; padding:80px; position:relative}
 }
 
 .about-faq {padding:180px 80px; background:#36383D}
+.design-partners+.about-faq {margin-top:-180px}
 .about-faq .h2 {text-align:center}
 .about-faq-list {margin:60px auto 0 auto; max-width:1098px}
 .about-faq-item {margin:12px 0 0 0; background:#575B63; position:relative}
@@ -1677,6 +1681,7 @@ footer {background:#272A2E; padding:80px; position:relative}
 
 @media screen and (max-width:1799px) {
     .about-faq {padding:120px 60px}
+    .design-partners+.about-faq {margin-top:-120px}
     .about-faq-list {margin:40px 0 0 0; max-width:none}
     .about-faq-item-title {padding:22px 78px 26px 24px; display:flex; align-items:center; min-height:98px}
     .about-faq-item-title svg {right:24px}
@@ -1690,6 +1695,7 @@ footer {background:#272A2E; padding:80px; position:relative}
 
 @media screen and (max-width:767px) {
     .about-faq {padding:80px 40px}
+    .design-partners+.about-faq {margin-top:-80px}
 }
 
 .design-how {padding:180px 80px 0 80px; background:#36383D}
@@ -1821,7 +1827,9 @@ footer {background:#272A2E; padding:80px; position:relative}
 }
 
 .design-seo {padding:180px 0; margin:0 auto; max-width:834px}
-.design-seo h2 {margin:0 0 24px 0; font-size:40px; line-height:48px; letter-spacing:-0.02em}
+.design-seo h2 {margin:48px 0 24px 0; font-size:40px; line-height:48px; letter-spacing:-0.02em}
+.design-seo h3 {margin:48px 0 24px 0; font-size:32px; line-height:40px}
+.design-seo h4 {margin:48px 0 24px 0; font-size:24px; line-height:30px}
 .design-seo p {margin:0}
 .design-seo *:first-child {margin-top:0}
 .design-seo *:last-child {margin-bottom:0}
@@ -1829,6 +1837,8 @@ footer {background:#272A2E; padding:80px; position:relative}
 @media screen and (max-width:1799px) {
     .design-seo {padding:120px 0; max-width:539px}
     .design-seo h2 {font-size:32px; line-height:39px}
+    .design-seo h3 {font-size:28px; line-height:32px}
+    .design-seo h4 {font-size:22px; line-height:25px}
     .design-seo p {margin:10px 0 0 0}
 }
 
@@ -1839,6 +1849,8 @@ footer {background:#272A2E; padding:80px; position:relative}
 @media screen and (max-width:767px) {
     .design-seo {padding:80px 40px; font-size:18px; line-height:27px}
     .design-seo h2 {font-size:28px; line-height:32px}
+    .design-seo h3 {font-size:26px; line-height:30px}
+    .design-seo h4 {font-size:22px; line-height:25px}
 }
 
 .design-menu {background:#36383D; position:relative; padding:40px 0; white-space:nowrap; font-weight:500; font-size:14px; line-height:40px; letter-spacing:0.08em; text-transform:uppercase}
@@ -1986,7 +1998,7 @@ footer {background:#272A2E; padding:80px; position:relative}
     .design-portfolio .portfolio-item:nth-child(4n-3) {background:#2F3236}
 }
 
-.design-partners {padding:180px 140px 52px 140px; background:#36383D}
+.design-partners {padding:180px 140px 232px 140px; background:#36383D}
 .design-partners-title {text-align:center}
 .design-partners-list {position:relative; margin:60px 0 0 0}
 .design-partners-list .swiper-slide {min-width:11.11%; max-width:11.11%}
@@ -2011,14 +2023,14 @@ footer {background:#272A2E; padding:80px; position:relative}
 .design-partners-list .swiper-pagination.swiper-pagination-horizontal .swiper-pagination-bullet-active {background:#FFFFFF}
 
 @media screen and (max-width:1799px) {
-    .design-partners {padding:120px 87px 52px 87px}
+    .design-partners {padding:120px 87px 172px 87px}
     .design-partners-list .swiper-slide {min-width:16.66%; max-width:16.66%}
     .design-partners-list .swiper-button-prev {left:-60px}
     .design-partners-list .swiper-button-next {right:-60px}
 }
 
 @media screen and (max-width:1259px) {
-    .design-partners {padding:120px 0 44px 0}
+    .design-partners {padding:120px 0 164px 0}
     .design-partners-list {margin:40px auto 0 auto; width:522px; max-height:696px}
     .design-partners-list .swiper {width:100%; height:100%}
     .design-partners-list .swiper-grid-column>.swiper-wrapper {flex-direction:row}
@@ -2029,7 +2041,7 @@ footer {background:#272A2E; padding:80px; position:relative}
 }
 
 @media screen and (max-width:767px) {
-    .design-partners {padding:80px 0 37px 0}
+    .design-partners {padding:80px 0 117px 0}
     .design-partners-list {width:480px; max-height:480px}
     .design-partners-list .swiper-slide {height:160px}
     .design-partners-list .swiper-pagination.swiper-pagination-horizontal {bottom:-37px}
