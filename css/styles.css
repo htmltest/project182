@@ -1833,7 +1833,9 @@ footer {background:#272A2E; padding:80px; position:relative}
 .design-seo h2 {margin:48px 0 24px 0; font-size:40px; line-height:48px; letter-spacing:-0.02em}
 .design-seo h3 {margin:48px 0 24px 0; font-size:32px; line-height:40px}
 .design-seo h4 {margin:48px 0 24px 0; font-size:24px; line-height:30px}
-.design-seo p {margin:0}
+.design-seo p {margin:24px 0}
+.design-seo ul {margin:24px 0}
+.design-seo ul li {margin:12px 0}
 .design-seo *:first-child {margin-top:0}
 .design-seo *:last-child {margin-bottom:0}
 
@@ -2297,11 +2299,11 @@ footer {background:#272A2E; padding:80px; position:relative}
 .price-group-title {text-align:center}
 .price-group-table {margin:24px 0 0 0}
 .price-group-table table {width:100%; border-collapse:collapse; margin:0}
-.price-group-table th {border-bottom:1px solid #575B63; font-weight:300; font-size:14px; line-height:21px; color:FFFFFF; text-transform:uppercase; padding:16px 0 16px 60px; vertical-align:middle}
+.price-group-table th {border-bottom:1px solid #575B63; font-weight:300; font-size:14px; line-height:21px; color:#FFFFFF; text-transform:uppercase; padding:16px 0 16px 60px; vertical-align:middle}
 .price-group-table th:first-child {padding-left:0}
 .price-group-table-header-unit {text-align:center; width:280px}
 .price-group-table-header-price {text-align:right; width:280px}
-.price-group-table td {border-bottom:1px solid #575B63; font-weight:300; font-size:16px; line-height:24px; color:FFFFFF; padding:16px 0 16px 60px; vertical-align:middle}
+.price-group-table td {border-bottom:1px solid #575B63; font-weight:300; font-size:16px; line-height:24px; color:#FFFFFF; padding:16px 0 16px 60px; vertical-align:middle}
 .price-group-table td:first-child {padding-left:0}
 .price-group-table-cell-unit {text-align:center; width:280px}
 .price-group-table-cell-unit sup {vertical-align:top; font-size:0.6em; line-height:1em}
