@@ -1171,6 +1171,8 @@ footer {background:#272A2E; padding:80px; position:relative}
 .fonts-loaded .footer-contacts-list {font-family:Steinbeck, sans-serif}
 .footer-contacts-item {margin:17px 0 0 0}
 .footer-contacts-item:first-child {margin:0}
+.footer-contacts-item a {margin:0 10px 0 0}
+.footer-contacts-item a:last-child {margin:0}
 
 @media screen and (max-width:1799px) {
     .footer-contacts {min-width:39%; max-width:39%; padding:0 30px 30px 0}
@@ -1613,11 +1615,13 @@ footer {background:#272A2E; padding:80px; position:relative}
 .about-reviews {padding:180px 80px 48px 80px; background:#36383D}
 .about-reviews .h2 {text-align:center}
 .about-reviews-list {margin:60px -10px 0 -10px; display:flex; position:relative}
+.about-reviews-list-page {margin-left:0; margin-right:0}
 .about-reviews-list .slick-track {display:flex}
 .about-reviews-list .slick-slide,
 .about-reviews-list.slick-initialized .slick-slide {float:none; display:flex; height:auto}
 .about-reviews-list .slick-slide > div {display:flex; width:100%}
 .about-reviews-item {min-width:33.33%; max-width:33.33%; display:flex !important; padding:0 10px}
+.about-reviews-list-page .about-reviews-item {min-width:0; max-width:none; display:block !important; padding:10px 0 0 0}
 .about-reviews-list .slick-slide .about-reviews-item {min-width:100%; max-width:100%}
 .about-reviews-item-inner {display:flex; width:100%; flex-direction:column; padding:32px; background:#575B63}
 .about-reviews-item-icon svg {display:block; width:25px; height:21px; fill:#FFFFFF}
