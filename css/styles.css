@@ -1995,6 +1995,20 @@ footer {background:#272A2E; padding:80px; position:relative}
     .design-payments-text ul li::before {left:10px; top:10px; width:5px; height:5px}
 }
 
+.design-price-google {margin:180px auto 0 auto; background:#2F3236; max-width:980px; padding:40px; display:flex; align-items:center}
+.design-price-google-text {margin:0; width:100%}
+.design-price-google-link {margin:0 0 0 60px; white-space:nowrap}
+
+@media screen and (max-width:1799px) {
+    .design-price-google {margin:120px auto 0 auto}
+}
+
+@media screen and (max-width:767px) {
+    .design-price-google {display:block; margin:80px 0 0 0; max-width:none; padding:32px}
+    .design-price-google-link {margin:32px 0 0 0}
+    .design-price-google-link a {width:100%}
+}
+
 .design-portfolio {padding:180px 0 0 0; background:#36383D}
 .design-portfolio-title {text-align:center; margin:0 0 30px 0}
 
@@ -2344,3 +2358,21 @@ footer {background:#272A2E; padding:80px; position:relative}
 }
 
 .swiper {-moz-user-select:none; -webkit-user-select:none; -ms-user-select:none; user-select:none}
+
+.cookies-message {display:none; align-items:center; position:fixed; width:772px; right:20px; bottom:20px; z-index:20; background:#FFFFFF; border:1px solid #DEE1E4; padding:15px}
+.cookies-message.visible {display:flex}
+.cookies-message-text {font-weight:500; font-size:16px; line-height:1.2em; color:#2F3236; width:100%}
+.cookies-message-btn {margin:0 0 0 16px}
+.cookies-message-btn .btn {display:block; padding:0 24px; height:56px; font-size:14px; line-height:56px}
+
+@media (max-width:1799px) {
+    .cookies-message {width:565px}
+    .cookies-message-text {font-size:12px}
+    .cookies-message-btn .btn {padding:0 16px; height:44px; font-size:12px; line-height:44px}
+}
+
+@media screen and (max-width:767px) {
+    .cookies-message {width:auto; left:10px; right:10px; bottom:10px}
+    .cookies-message-text {font-size:11px}
+    .cookies-message-btn .btn {padding:0 14px}
+}
