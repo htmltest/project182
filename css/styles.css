@@ -1544,9 +1544,11 @@ footer {background:#272A2E; padding:80px; position:relative}
 
 .text {padding:60px 50px 100px 50px; font-size:16px; line-height:24px; font-weight:300}
 .text-inner {max-width:1016px}
-.text-inner h2 {margin:26px 0 32px 0}
 .text-inner p {margin:8px 0}
-.text-inner h4 {margin:32px 0 8px 0}
+.text-inner h2,
+.text-inner .h2 {margin:26px 0 32px 0}
+.text-inner h4,
+.text-inner .h4 {margin:32px 0 8px 0}
 .text-inner a {text-decoration:underline}
 .text-inner a:hover {text-decoration:none}
 
@@ -1788,6 +1790,10 @@ footer {background:#272A2E; padding:80px; position:relative}
     .design-price-list .slick-slide:nth-child(1) .design-price-item {background:#575B63; color:#FFFFFF}
     .design-price-list .slick-slide:nth-child(2) .design-price-item {background:#FFFFFF; color:#36383D}
     .design-price-list .slick-slide:nth-child(3) .design-price-item {background:#DEE1E4; color:#36383D}
+    .design-price-list .design-price-item-time {color:#DEE1E4}
+    .design-price-list .slick-slide:nth-child(1) .design-price-item .design-price-item-time {color:#FFFFFF}
+    .design-price-list .slick-slide:nth-child(2) .design-price-item .design-price-item-time {color:#36383D}
+    .design-price-list .slick-slide:nth-child(3) .design-price-item .design-price-item-time {color:#36383D}
     .design-price-item:nth-child(1) .design-price-item-descr ul li::before {background:#36383D}
     .design-price-list .slick-slide:nth-child(1) .design-price-item .design-price-item-descr ul li::before {background:#FFFFFF}
     .design-price-item-bottom {margin:63px 0 0 0}
