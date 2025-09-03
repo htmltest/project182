@@ -649,6 +649,7 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 .project-item-info-item-value sup {vertical-align:top; font-size:0.6em; line-height:1em}
 .fonts-loaded .project-item-info-item-value {font-family:Steinbeck, sans-serif}
 .project-item-about {background:#575B63; width:100%; padding:60px; min-height:660px; overflow:hidden; color:#FFFFFF}
+.project-item-works {background:#36383D}
 .project-item-about-text {margin:12px 0 0 0; max-width:750px; font-weight:300; font-size:18px; line-height:27px}
 .project-item-about-text p {margin:12px 0}
 .project-item-fabric {background:#DEE1E4; width:100%; padding:60px; min-height:660px; overflow:hidden; color:#2F3236; font-weight:normal; font-size:24px; line-height:30px; letter-spacing:-0.02em; text-transform:uppercase}
@@ -1840,9 +1841,12 @@ footer {background:#272A2E; padding:80px; position:relative}
 }
 
 .design-seo {padding:180px 0; margin:0 auto; max-width:834px}
-.design-seo h2 {margin:48px 0 24px 0; font-size:40px; line-height:48px; letter-spacing:-0.02em}
-.design-seo h3 {margin:48px 0 24px 0; font-size:32px; line-height:40px}
-.design-seo h4 {margin:48px 0 24px 0; font-size:24px; line-height:30px}
+.design-seo h2,
+.design-seo .h2 {margin:48px 0 24px 0; font-size:40px; line-height:48px; letter-spacing:-0.02em}
+.design-seo h3,
+.design-seo .h3 {margin:48px 0 24px 0; font-size:32px; line-height:40px}
+.design-seo h4,
+.design-seo .h4 {margin:48px 0 24px 0; font-size:24px; line-height:30px}
 .design-seo p {margin:24px 0}
 .design-seo ul {margin:24px 0}
 .design-seo ul li {margin:12px 0}
