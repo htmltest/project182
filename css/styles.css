@@ -2386,3 +2386,44 @@ footer {background:#272A2E; padding:80px; position:relative}
     .cookies-message-text {font-size:11px}
     .cookies-message-btn .btn {padding:0 14px}
 }
+
+.design-example {padding:180px 80px; background:#2F3236}
+.design-seo+.design-example {padding-top:0}
+.design-example-title {text-align:center}
+.design-example-title sup {vertical-align:top; font-size:0.6em; line-height:1em}
+.design-example-detail {margin:50px 0 0 0; display:flex; justify-content:space-between}
+.design-example-detail-item {min-width:calc(50% - 10px); max-width:calc(50% - 10px); background:#575B63; padding:40px; color:#FFFFFF; display:flex; flex-direction:column; justify-content:space-between}
+.design-example-detail-item:first-child {background:#FFFFFF; color:#2F3236}
+.design-example-detail-text {margin:40px 0 0 0}
+.design-example-detail-text ul {margin:12px 0 0 0}
+.design-example-detail-text strong {font-weight:500; white-space:nowrap}
+.design-example-payments {margin:20px 0 0 0; background:#36383D; padding:60px; display:flex; justify-content:space-between}
+.design-example-payments-title {min-width:calc(50% - 30px); max-width:calc(50% - 30px)}
+.design-example-payments-text {min-width:calc(50% - 30px); max-width:calc(50% - 30px)}
+.design-example-payments-text * {margin:0}
+
+@media screen and (max-width:1799px) {
+    .design-example {padding:120px 60px}
+    .design-seo+.design-example {padding-top:0}
+    .design-example-detail {margin:40px 0 0 0}
+}
+
+@media screen and (max-width:1259px) {
+    .design-example {padding:120px 40px}
+    .design-seo+.design-example {padding-top:0}
+    .design-example-detail {display:block}
+    .design-example-detail-item {min-width:0; max-width:none; margin:20px 0 0 0}
+    .design-example-detail-item:first-child {margin:0}
+    .design-example-detail-text {margin:32px 0 0 0}
+    .design-example-payments {padding:30px}
+}
+
+@media screen and (max-width:767px) {
+    .design-how {padding:80px 40px}
+    .design-seo+.design-example {padding-top:0}
+    .design-example-detail-item {padding:32px}
+    .design-example-detail-text {margin:60px 0 0 0}
+    .design-example-payments {padding:32px; display:block}
+    .design-example-payments-title {min-width:0; max-width:none}
+    .design-example-payments-text {min-width:0; max-width:none; margin:60px 0 0 0}
+}
