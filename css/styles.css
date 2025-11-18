@@ -2427,3 +2427,50 @@ footer {background:#272A2E; padding:80px; position:relative}
     .design-example-payments-title {min-width:0; max-width:none}
     .design-example-payments-text {min-width:0; max-width:none; margin:60px 0 0 0}
 }
+
+.design-example-detail-2 {margin:50px -5px 0 -5px; display:flex}
+.design-example-detail-2 sup {vertical-align:top; font-size:0.6em; line-height:1em}
+.design-example-detail-2-left {min-width:calc(50% - 10px); max-width:calc(50% - 10px); margin:0 5px; display:flex; flex-wrap:wrap}
+.design-example-detail-2-middle {min-width:calc(25% - 10px); max-width:calc(25% - 10px); margin:0 5px; display:flex; flex-direction:column}
+.design-example-detail-2-right {min-width:calc(25% - 10px); max-width:calc(25% - 10px); margin:0 5px; display:flex}
+.design-example-detail-2-item {display:flex; flex-direction:column; width:100%; margin:10px 0 0 0; padding:20px; justify-content:space-between; background:#FFFFFF; min-height:140px}
+.design-example-detail-2-title {font:14px/1.26em Steinbeck, sans-serif; letter-spacing:-0.02em; text-transform:uppercase; color:#575B63}
+.design-example-detail-2-text {margin:20px 0 0 0; font-weight:500; font-size:24px; line-height:1.5em; color:#000000}
+
+@media screen and (max-width:1799px) {
+    .design-example-detail-2 {margin:30px -5px 0 -5px}
+    .design-example-detail-2-item {min-height:132px}
+    .design-example-detail-2-text {font-size:20px; line-height:1.5em}
+}
+
+@media screen and (max-width:1259px) {
+    .design-example-title-2 {text-align:left}
+    .design-example-detail-2 {margin:30px 0 0 0; display:block}
+    .design-example-detail-2-left {min-width:0; max-width:none; margin:0}
+    .design-example-detail-2-middle {min-width:0; max-width:none; margin:0}
+    .design-example-detail-2-right {min-width:0; max-width:none; margin:0}
+    .design-example-detail-2-text {font-size:24px; line-height:1.5em}
+}
+
+@media screen and (max-width:767px) {
+    .design-example-detail-2 {margin:35px 0 0 0}
+}
+
+.design-example-detail-2-left .design-example-detail-2-item {width:calc(50% - 5px); margin:10px 0 0 0; background:#575B63}
+.design-example-detail-2-left .design-example-detail-2-item .design-example-detail-2-title {color:#FFFFFF}
+.design-example-detail-2-left .design-example-detail-2-item .design-example-detail-2-text {color:#FFFFFF}
+.design-example-detail-2-left .design-example-detail-2-item:nth-child(even) {margin-left:10px}
+.design-example-detail-2-left .design-example-detail-2-item:nth-child(2) {background:#DEE1E4}
+.design-example-detail-2-left .design-example-detail-2-item:nth-child(3) {background:#DEE1E4}
+.design-example-detail-2-left .design-example-detail-2-item:nth-child(2) .design-example-detail-2-title {color:#575B63}
+.design-example-detail-2-left .design-example-detail-2-item:nth-child(2) .design-example-detail-2-text {color:#2F3236}
+.design-example-detail-2-left .design-example-detail-2-item:nth-child(3) .design-example-detail-2-title {color:#575B63}
+.design-example-detail-2-left .design-example-detail-2-item:nth-child(3) .design-example-detail-2-text {color:#2F3236}
+
+@media screen and (max-width:767px) {
+    .design-example-detail-2-left .design-example-detail-2-item:nth-child(1) {width:100%}
+    .design-example-detail-2-left .design-example-detail-2-item:nth-child(2) {width:100%; margin:10px 0 0 0}
+}
+
+.design-example-detail-2-right .design-example-detail-2-item {background:#DEE1E4; justify-content:flex-start}
+.design-example-detail-2-right .design-example-detail-2-text {font-size:16px; line-height:1.5em; color:#2F3236}
