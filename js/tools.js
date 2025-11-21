@@ -923,4 +923,33 @@ $(window).on('load resize', function() {
         }
 
     });
+
+    $('.detail-price-table').each(function() {
+        var curTable = $(this);
+
+        if ($(window).width() > 1259) {
+            curTable.mCustomScrollbar('destroy');
+        } else {
+            curTable.mCustomScrollbar({
+                axis: 'x',
+                callbacks:{
+                    onInit: function() {
+                        curTable.addClass('position-left');
+                    },
+                    onScroll:function() {
+                        if (this.mcs.leftPct == 0) {
+                            curTable.addClass('position-left');
+                        } else {
+                            curTable.removeClass('position-left');
+                        }
+                        if (this.mcs.leftPct == 100) {
+                            curTable.addClass('position-right');
+                        } else {
+                            curTable.removeClass('position-right');
+                        }
+                    }
+                }
+            });
+        }
+    });
 });

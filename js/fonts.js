@@ -18,6 +18,10 @@ window.onload = function() {
             var Inter300 = new FontFaceObserver('Inter', {
                 weight: '300'
             });
+            var Inter300i = new FontFaceObserver('Inter', {
+                weight: '300',
+                style: 'italic'
+            });
             var Inter400 = new FontFaceObserver('Inter', {
                 weight: 'normal'
             });
@@ -30,6 +34,7 @@ window.onload = function() {
 
             Promise.all([
                 Inter300.load(),
+                Inter300i.load(),
                 Inter400.load(),
                 Inter500.load(),
                 Steinbeck400.load()
