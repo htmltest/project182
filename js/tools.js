@@ -953,3 +953,222 @@ $(window).on('load resize', function() {
         }
     });
 });
+
+$(document).ready(function() {
+
+    $('.architecture-types-item').click(function() {
+        $(this).toggleClass('open');
+    });
+
+    $('.architecture-projects-more').click(function(e) {
+        $('.architecture-projects').toggleClass('open');
+        if (!$('.architecture-projects').hasClass('open')) {
+            $('html, body').animate({'scrollTop': $('.architecture-projects-more').offset().top});
+        }
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.architecture-detail-photo', function(e) {
+        var curLink = $(this);
+        var curItem = curLink;
+        var curGallery = $('body');
+        var curIndex = curGallery.find('.architecture-detail-photo').index(curItem);
+
+        var curPadding = $('.wrapper').width();
+        var curWidth = $(window).width();
+        if (curWidth < 480) {
+            curWidth = 480;
+        }
+        var curScroll = $(window).scrollTop();
+        $('html').addClass('window-photo-open');
+        curPadding = $('.wrapper').width() - curPadding;
+        $('body').css({'margin-right': curPadding + 'px'});
+
+        var windowHTML =    '<div class="window-photo">';
+
+        var galleryLength = curGallery.find('.architecture-detail-photo').length;
+
+        windowHTML +=           '<a href="#" class="window-photo-close"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#icon-menu-close"></use></svg></a>';
+
+        windowHTML +=           '<div class="window-photo-slider">' +
+                                    '<div class="window-photo-slider-list">';
+
+        for (var i = 0; i < galleryLength; i++) {
+            var curGalleryItem = curGallery.find('.architecture-detail-photo').eq(i);
+            windowHTML +=               '<div class="window-photo-slider-list-item">' +
+                                            '<div class="window-photo-slider-list-item-inner"><img src="' + pathTemplate + 'images/loading.gif" data-src="' + curGalleryItem.attr('href') + '" alt="" /></div>' +
+                                        '</div>';
+        }
+        windowHTML +=               '</div>' +
+                                '</div>';
+
+        windowHTML +=       '</div>';
+
+        $('.window-photo').remove();
+        $('body').append(windowHTML);
+
+        $('.wrapper').css({'top': -curScroll});
+        $('.wrapper').data('curScroll', curScroll);
+        $('meta[name="viewport"]').attr('content', 'width=' + curWidth);
+
+        $('.window-photo').each(function() {
+            var marginPhoto = 0;
+            if ($(window).width() < 1260) {
+                marginPhoto = 260;
+            }
+            if ($(window).width() < 768) {
+                marginPhoto = 230;
+            }
+            var newHeight = marginPhoto;
+            $('.window-photo-slider-list-item-inner').css({'height': 'calc(100vh - ' + newHeight + 'px)', 'line-height': 'calc(100vh - ' + newHeight + 'px)'});
+        });
+
+        $('.window-photo-slider-list').slick({
+            infinite: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-prev"></use></svg></button>',
+            nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-next"></use></svg></button>',
+            dots: false,
+            speed: 250,
+            initialSlide: curIndex,
+            responsive: [
+                {
+                    breakpoint: 1259,
+                    settings: {
+                        arrows: false
+                    }
+                }
+            ]
+        }).on('setPosition', function(event, slick) {
+            var currentSlide = $('.window-photo-slider-list').slick('slickCurrentSlide');
+            var curIMG = $('.window-photo-slider-list-item').eq(currentSlide).find('img');
+            if (curIMG.attr('src') !== curIMG.attr('data-src')) {
+                var newIMG = $('<img src="" alt="" style="position:fixed; left:-9999px; top:-9999px" />');
+                $('body').append(newIMG);
+                newIMG.one('load', function(e) {
+                    curIMG.attr('src', curIMG.attr('data-src'));
+                    newIMG.remove();
+                });
+                newIMG.attr('src', curIMG.attr('data-src'));
+                window.setTimeout(function() {
+                    curIMG.attr('src', curIMG.attr('data-src'));
+                    if (newIMG) {
+                        newIMG.remove();
+                    }
+                }, 3000);
+            }
+        });
+
+        e.preventDefault();
+    });
+
+    $('body').on('click', '.architecture-detail-schemes-item', function(e) {
+        var curLink = $(this);
+        var curItem = curLink;
+        var curGallery = $('body');
+        var curIndex = curGallery.find('.architecture-detail-schemes-item').index(curItem);
+
+        var curPadding = $('.wrapper').width();
+        var curWidth = $(window).width();
+        if (curWidth < 480) {
+            curWidth = 480;
+        }
+        var curScroll = $(window).scrollTop();
+        $('html').addClass('window-photo-open');
+        curPadding = $('.wrapper').width() - curPadding;
+        $('body').css({'margin-right': curPadding + 'px'});
+
+        var windowHTML =    '<div class="window-photo">';
+
+        var galleryLength = curGallery.find('.architecture-detail-schemes-item').length;
+
+        windowHTML +=           '<a href="#" class="window-photo-close"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#icon-menu-close"></use></svg></a>';
+
+        windowHTML +=           '<div class="window-photo-slider">' +
+                                    '<div class="window-photo-slider-list">';
+
+        for (var i = 0; i < galleryLength; i++) {
+            var curGalleryItem = curGallery.find('.architecture-detail-schemes-item').eq(i);
+            windowHTML +=               '<div class="window-photo-slider-list-item">' +
+                                            '<div class="window-photo-slider-list-item-inner"><img src="' + pathTemplate + 'images/loading.gif" data-src="' + curGalleryItem.attr('href') + '" alt="" /></div>' +
+                                        '</div>';
+        }
+        windowHTML +=               '</div>' +
+                                '</div>';
+
+        windowHTML +=       '</div>';
+
+        $('.window-photo').remove();
+        $('body').append(windowHTML);
+
+        $('.wrapper').css({'top': -curScroll});
+        $('.wrapper').data('curScroll', curScroll);
+        $('meta[name="viewport"]').attr('content', 'width=' + curWidth);
+
+        $('.window-photo').each(function() {
+            var marginPhoto = 0;
+            if ($(window).width() < 1260) {
+                marginPhoto = 260;
+            }
+            if ($(window).width() < 768) {
+                marginPhoto = 230;
+            }
+            var newHeight = marginPhoto;
+            $('.window-photo-slider-list-item-inner').css({'height': 'calc(100vh - ' + newHeight + 'px)', 'line-height': 'calc(100vh - ' + newHeight + 'px)'});
+        });
+
+        $('.window-photo-slider-list').slick({
+            infinite: false,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            prevArrow: '<button type="button" class="slick-prev"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-prev"></use></svg></button>',
+            nextArrow: '<button type="button" class="slick-next"><svg><use xlink:href="' + pathTemplate + 'images/sprite.svg#gallery-next"></use></svg></button>',
+            dots: false,
+            speed: 250,
+            initialSlide: curIndex,
+            responsive: [
+                {
+                    breakpoint: 1259,
+                    settings: {
+                        arrows: false
+                    }
+                }
+            ]
+        }).on('setPosition', function(event, slick) {
+            var currentSlide = $('.window-photo-slider-list').slick('slickCurrentSlide');
+            var curIMG = $('.window-photo-slider-list-item').eq(currentSlide).find('img');
+            if (curIMG.attr('src') !== curIMG.attr('data-src')) {
+                var newIMG = $('<img src="" alt="" style="position:fixed; left:-9999px; top:-9999px" />');
+                $('body').append(newIMG);
+                newIMG.one('load', function(e) {
+                    curIMG.attr('src', curIMG.attr('data-src'));
+                    newIMG.remove();
+                });
+                newIMG.attr('src', curIMG.attr('data-src'));
+                window.setTimeout(function() {
+                    curIMG.attr('src', curIMG.attr('data-src'));
+                    if (newIMG) {
+                        newIMG.remove();
+                    }
+                }, 3000);
+            }
+        });
+
+        e.preventDefault();
+    });
+    
+    $('.architecture-detail').each(function() {
+        var curBlock = $(this);
+        if (curBlock.find('.architecture-detail-photo').length == 2) {
+            curBlock.addClass('architecture-detail-3');
+        }
+        if (curBlock.find('.architecture-detail-photo').length == 4) {
+            curBlock.addClass('architecture-detail-5');
+        }
+        if (curBlock.find('.architecture-detail-photo').length == 5) {
+            curBlock.addClass('architecture-detail-6');
+        }
+    });
+
+});

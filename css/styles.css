@@ -2516,3 +2516,378 @@ footer {background:#272A2E; padding:80px; position:relative}
 @media screen and (max-width:767px) {
     .detail-price {margin:80px 40px}
 }
+
+.architecture-types {padding:180px 0 0 0; background:#272A2E}
+.architecture-types .h2 {text-align:center; margin:0 80px}
+.architecture-types-list {margin:84px 0 0 0}
+.architecture-types-item {display:flex; cursor:pointer; padding:55px 50px 53px 80px; align-items:center; position:relative}
+.architecture-types-item:nth-child(4n - 3) {background:#36383D}
+.architecture-types-item:nth-child(4n - 2) {background:#575B63}
+.architecture-types-item:nth-child(4n - 1) {background:#DEE1E4}
+.architecture-types-item:nth-child(4n) {background:#FFFFFF}
+.architecture-types-item-title {min-width:50%; max-width:50%; padding:0 80px 0 0}
+.architecture-types-item:nth-child(4n - 3) .architecture-types-item-title {color:#FFFFFF}
+.architecture-types-item:nth-child(4n - 2) .architecture-types-item-title {color:#FFFFFF}
+.architecture-types-item:nth-child(4n - 1) .architecture-types-item-title {color:#2F3236}
+.architecture-types-item:nth-child(4n) .architecture-types-item-title {color:#2F3236}
+.architecture-types-item-content {min-width:50%; max-width:50%; padding:0 0 0 80px; max-height:132px; position:relative; overflow:hidden; display:-webkit-box; -webkit-line-clamp:4; -webkit-box-orient:vertical}
+.architecture-types-item.open .architecture-types-item-content {display:block; max-height:9999px}
+.architecture-types-item:nth-child(4n - 3) .architecture-types-item-content {color:#FFFFFF}
+.architecture-types-item:nth-child(4n - 2) .architecture-types-item-content {color:#FFFFFF}
+.architecture-types-item:nth-child(4n - 1) .architecture-types-item-content {color:#36383D}
+.architecture-types-item:nth-child(4n) .architecture-types-item-content {color:#36383D}
+.architecture-types-item-content p {margin:33px 0}
+.architecture-types-item-content ul {margin:33px 0; padding:0; list-style:none}
+.architecture-types-item-content ul li {margin:0; padding:0 0 0 33px; position:relative}
+.architecture-types-item-content ul li::before {content:""; position:absolute; left:14px; top:13px; width:6px; height:6px; border-radius:50%}
+.architecture-types-item:nth-child(4n - 3) .architecture-types-item-content ul li::before {background:#FFFFFF}
+.architecture-types-item:nth-child(4n - 2) .architecture-types-item-content ul li::before {background:#FFFFFF}
+.architecture-types-item:nth-child(4n - 1) .architecture-types-item-content ul li::before {background:#36383D}
+.architecture-types-item:nth-child(4n) .architecture-types-item-content ul li::before {background:#36383D}
+.architecture-types-item-content *:first-child {margin-top:0}
+.architecture-types-item-content *:last-child {margin-bottom:0}
+.architecture-types-item-arrow {position:absolute; left:50%; top:50%; width:50px; height:50px; border-radius:50%; margin:-25px 0 0 -25px; display:flex; align-items:center; justify-content:center}
+.architecture-types-item:nth-child(4n - 3) .architecture-types-item-arrow {background:#575B63}
+.architecture-types-item:nth-child(4n - 2) .architecture-types-item-arrow {background:#36383D}
+.architecture-types-item:nth-child(4n - 1) .architecture-types-item-arrow {background:#FFFFFF}
+.architecture-types-item:nth-child(4n) .architecture-types-item-arrow {background:#DEE1E4}
+.architecture-types-item-arrow svg {width:24px; height:24px; fill:none; transition:transform 0.2s}
+.architecture-types-item.open .architecture-types-item-arrow svg {transform:rotate(-180deg)}
+.architecture-types-item:nth-child(4n - 3) .architecture-types-item-arrow svg {stroke:#FFFFFF}
+.architecture-types-item:nth-child(4n - 2) .architecture-types-item-arrow svg {stroke:#FFFFFF}
+.architecture-types-item:nth-child(4n - 1) .architecture-types-item-arrow svg {stroke:#36383D}
+.architecture-types-item:nth-child(4n) .architecture-types-item-arrow svg {stroke:#36383D}
+
+@media screen and (max-width:1799px) {
+    .architecture-types {padding:120px 0 0 0}
+    .architecture-types .h2 {margin:0 60px}
+    .architecture-types-list {margin:53px 0 0 0}
+    .architecture-types-item {padding:36px 60px}
+    .architecture-types-item-title {padding:0 60px 0 0}
+    .architecture-types-item-content {padding:0 0 0 60px; max-height:107px}
+    .architecture-types-item-content p {margin:27px 0}
+    .architecture-types-item-content ul {margin:27px 0}
+    .architecture-types-item-content ul li {padding:0 0 0 27px}
+    .architecture-types-item-content ul li::before {left:9px; top:11px; width:5px; height:5px}
+}
+
+@media screen and (max-width:1259px) {
+    .architecture-types {padding:0}
+    .architecture-types .h2 {display:none}
+    .architecture-types-list {margin:0}
+    .architecture-types-item {display:block; padding:60px 106px 60px 40px}
+    .architecture-types-item-title {min-width:0; max-width:none; padding:0}
+    .architecture-types-item-content {min-width:0; max-width:none; padding:0; max-height:none; display:none; margin:35px 0 -25px 0}
+    .architecture-types-item.open .architecture-types-item-content {max-height:none; display:block}
+    .architecture-types-item-arrow {left:auto; right:36px; width:36px; height:36px; margin:-18px 0 0 -18px}
+    .architecture-types-item-arrow svg {width:24px; height:24px; fill:none; transition:transform 0.2s}
+}
+
+@media screen and (max-width:767px) {
+    .architecture-types-item {padding:43px 76px 42px 40px}
+    .architecture-types-item-content {margin:23px 0 0 0}
+    .architecture-types-item-arrow {right:40px}
+}
+
+.architecture-projects {padding:180px 0 0 0; background:#36383D}
+.architecture-projects .h2 {text-align:center}
+.architecture-projects-list {margin:60px -15px 0 -15px; display:flex; flex-wrap:wrap; gap:30px 0}
+.architecture-projects-item {display:block; min-width:calc(50% - 30px); max-width:calc(50% - 30px); margin:0 15px; position:relative; text-decoration:none; color:#FFFFFF}
+.architecture-projects-item:nth-child(n + 5) {display:none}
+.architecture-projects.open .architecture-projects-item:nth-child(n + 5) {display:block}
+.architecture-projects-item:hover {text-decoration:none}
+.architecture-projects-item-bg {height:530px; position:relative; overflow:hidden}
+.architecture-projects-item-bg img {position:relative; display:block; width:100%; height:100%; max-width:none; -o-object-fit:cover; object-fit:cover}
+.architecture-projects-item-content {position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(10, 10, 10, 0.6); padding:55px 50px; opacity:0; transition:opacity 0.2s; font-size:28px; line-height:40px}
+.architecture-projects-item:hover .architecture-projects-item-content {opacity:1}
+.architecture-projects-item-content .h3 {max-width:415px}
+.architecture-projects-item-content p {margin:24px 0 0 0}
+.architecture-projects-item-content sup {vertical-align:top; font-size:0.5em; line-height:1em; position:relative; top:0.5em}
+.architecture-projects-item-content-btn {display:none}
+.architecture-projects-more {margin:30px 0 0 0; display:flex; height:120px; align-items:center; justify-content:center; background:#6C707A; text-decoration:none; font-size:32px; line-height:1.21em; letter-spacing:-0.02em; text-transform:uppercase}
+.fonts-loaded .architecture-projects-more {font-family:Steinbeck, sans-serif}
+.architecture-projects-more:hover {background:#50535A; color:#FFFFFF; text-decoration:none}
+.architecture-projects-more:active {background:#414349; color:#FFFFFF}
+.architecture-projects-more svg {width:36px; height:16px; fill:#FFFFFF; margin:0 0 0 20px; transform:rotate(90deg)}
+.architecture-projects-more span {margin-bottom:10px}
+.architecture-projects-more span+span {display:none}
+.architecture-projects.open .architecture-projects-more svg {transform:rotate(-90deg)}
+.architecture-projects.open .architecture-projects-more span {display:none}
+.architecture-projects.open .architecture-projects-more span+span {display:block}
+
+@media screen and (max-width:1799px) {
+    .architecture-projects {padding:120px 0 0 0}
+    .architecture-projects-list {margin:45px -10px 0 -10px; gap:20px 0}
+    .architecture-projects-item {min-width:calc(50% - 20px); max-width:calc(50% - 20px); margin:0 10px}
+    .architecture-projects-item-bg {height:420px}
+    .architecture-projects-item-content {padding:55px 60px; font-size:24px; line-height:40px}
+    .architecture-projects-item-content .h3 {max-width:311px}
+    .architecture-projects-item-content p {margin:12px 0 0 0}
+    .architecture-projects-more {margin:20px 0 0 0}
+}
+
+@media screen and (max-width:1259px) {
+    .architecture-projects-list {margin:72px 0 0 0; display:block}
+    .architecture-projects-item {min-width:0; max-width:none; margin:0; display:flex}
+    .architecture-projects-item:nth-child(even) {flex-direction:row-reverse}
+    .architecture-projects-item:nth-child(n + 5) {display:none}
+    .architecture-projects.open .architecture-projects-item:nth-child(n + 5) {display:flex}
+    .architecture-projects-item-bg {height:auto; height:420px; min-width:50%; max-width:50%}
+    .architecture-projects-item-content {position:relative; left:auto; top:auto; right:auto; bottom:auto; min-width:50%; max-width:50%; padding:83px 40px; opacity:1; display:flex; flex-direction:column; justify-content:space-between; font-size:18px; line-height:1.5em; background:#272A2E}
+    .architecture-projects-item:nth-child(3n - 2) .architecture-projects-item-content {background:#272A2E}
+    .architecture-projects-item:nth-child(3n - 1) .architecture-projects-item-content {background:#575B63}
+    .architecture-projects-item:nth-child(3n) .architecture-projects-item-content {background:#DEE1E4; color:#36383D}
+    .architecture-projects-item-content .h3 {max-width:none}
+    .architecture-projects-item-content p {margin:10px 0 0 0; flex-grow:1}
+    .architecture-projects-item-content-btn {display:flex; width:169px; min-height:60px; align-items:center; justify-content:center; font-weight:500; font-size:14px; line-height:1.5em; text-transform:uppercase; color:#FFFFFF; letter-spacing:0.08em; background:#494D53}
+    .architecture-projects-item:nth-child(3n - 2) .architecture-projects-item-content-btn {background:#494D53}
+    .architecture-projects-item:nth-child(3n - 1) .architecture-projects-item-content-btn {background:#494D53}
+    .architecture-projects-item:nth-child(3n) .architecture-projects-item-content-btn {background:#F3F3F3; color:#575B63}
+    .architecture-projects-more {margin:0}
+}
+
+@media screen and (max-width:767px) {
+    .architecture-projects {padding:80px 0 0 0}
+    .architecture-projects-list {margin:40px 0 0 0}
+    .architecture-projects-item {flex-direction:column-reverse; padding:0 0 177px 0; position:relative}
+    .architecture-projects-item:nth-child(even) {flex-direction:column-reverse}
+    .architecture-projects-item:nth-child(3n - 2) {background:#2F3236}
+    .architecture-projects-item:nth-child(3n - 1) {background:#575B63}
+    .architecture-projects-item:nth-child(3n) {background:#DEE1E4}
+    .architecture-projects-item-bg {min-height:330px; min-width:100%; max-width:100%; margin:30px 0 0 40px}
+    .architecture-projects-item:nth-child(even) .architecture-projects-item-bg {margin:30px 0 0 -40px}
+    .architecture-projects-item-content {position:static; min-width:0; max-width:none; padding:59px 40px 0 40px; display:block; font-size:20px; line-height:1.5em; background:none}
+    .architecture-projects-item:nth-child(3n - 2) .architecture-projects-item-content {background:none}
+    .architecture-projects-item:nth-child(3n - 1) .architecture-projects-item-content {background:none}
+    .architecture-projects-item:nth-child(3n) .architecture-projects-item-content {background:none; color:#36383D}
+    .architecture-projects-item-content p {margin:30px 0 0 0}
+    .architecture-projects-item-content-btn {position:absolute; left:40px; right:40px; bottom:60px; width:auto; font-size:16px}
+    .architecture-projects-more {font-size:28px; line-height:1.14em}
+    .architecture-projects-more svg {width:28px; height:14px}
+}
+
+.architecture-prices {padding:180px 0 0 0; background:#36383D}
+.architecture-prices .h2 {text-align:center; margin:0 80px}
+.architecture-prices .design-price-item-bottom {margin:55px 0 0 0}
+.design-price-full {background:#272A2E; display:flex}
+.design-price-full .design-price-item-top {min-width:33.33%; max-width:33.33%; padding:32px 32px 52px 32px}
+.design-price-full-container {padding:32px 32px 52px 32px; width:100%}
+.design-price-full .design-price-item-anonce {margin:0}
+.design-price-full-detail {margin:25px 0 0 0; display:flex; gap:0 102px}
+.design-price-full .design-price-item-descr ul li::before {background:#FFFFFF}
+.design-price-full .design-price-item-cost {margin:57px 0 0 0}
+
+@media screen and (max-width:1799px) {
+    .architecture-prices {padding:120px 0 0 0}
+    .architecture-prices .h2 {margin:0 60px}
+    .architecture-prices .design-price-item-bottom {margin:15px 0 0 0}
+    .design-price-full-detail {gap:0 71px}
+    .design-price-full .design-price-item-cost {margin:30px 0 0 0}
+}
+
+@media screen and (max-width:1259px) {
+    .architecture-prices .design-price-list {margin:51px 40px 0 40px}
+    .architecture-prices .design-price-list .slick-prev {display:none !important}
+    .architecture-prices .design-price-list .slick-next {display:none !important}
+    .architecture-prices .design-price-list .slick-list {display:block}
+    .architecture-prices .design-price-list .slick-track {display:block; width:auto !important; transform:none !important}
+    .architecture-prices .design-price-list.slick-initialized .slick-slide {width:auto !important; margin:20px 0 0 0}
+    .architecture-prices .design-price-list.slick-initialized .slick-slide:first-child {margin:0}
+    .architecture-prices .design-price-item {opacity:1}
+    .design-price-full {background:#575B63; display:block; margin:20px 40px 0 40px; padding:32px}
+    .design-price-full .design-price-item-top {min-width:0; max-width:none; padding:0}
+    .design-price-full-container {padding:12px 0 0 0; width:auto}
+    .design-price-full-detail {margin:24px -13px 0 -13px; gap:0}
+    .design-price-full-detail .design-price-item-descr {min-width:50%; max-width:50%}
+    .design-price-full .design-price-item-cost {margin:26px 0 0 0}
+}
+
+@media screen and (max-width:767px) {
+    .architecture-prices {padding:80px 0 0 0}
+    .architecture-prices .h2 {margin:0 40px}
+    .design-price-full-detail {margin:24px 0 0 0; display:block}
+    .design-price-full-detail .design-price-item-descr {min-width:0; max-width:none; margin:24px 0 0 0}
+}
+
+.architecture-services {padding:180px 80px 0 80px; background:#36383D}
+.architecture-services .h2 {text-align:center}
+.architecture-services-list {margin:60px -10px 0 -10px; display:flex; flex-wrap:wrap; gap:20px 0}
+.architecture-services-item {min-width:calc(50% - 20px); max-width:calc(50% - 20px); margin:0 10px; padding:20px 40px 44px 40px; background:#272A2E}
+.architecture-services-item:nth-child(even) {background:#575B63}
+.architecture-services-item-photo {margin:0 -20px}
+.architecture-services-item-photo img {display:block; width:100%}
+.architecture-services-item .h3 {margin:43px 0 0 0}
+.architecture-services-item-anonce {margin:12px 0 0 0; max-width:560px}
+.architecture-services-item-link {margin:43px 0 0 0; display:flex}
+.architecture-services-item-link a {display:flex; width:183px; height:60px; align-items:center; justify-content:center; font-weight:500; font-size:16px; line-height:24px; letter-spacing:0.08em; text-transform:uppercase; color:#FFFFFF; text-decoration:none; background:#494D53; transition:background 0.2s, color 0.2s}
+.architecture-services-item-link a:hover {color:#575b63; background:#f3f3f3; text-decoration:none}
+.architecture-services-item-link a:active {color:#575b63; background:#bdbdbd; text-decoration:none}
+
+@media screen and (max-width:1799px) {
+    .architecture-services {padding:120px 60px 0 60px}
+    .architecture-services-list {margin:40px -10px 0 -10px}
+    .architecture-services-item .h3 {margin:30px 0 0 0}
+    .architecture-services-item-anonce {margin:16px 0 0 0; max-width:none; font-size:16px; line-height:1.5em}
+    .architecture-services-item-link {margin:34px 0 0 0}
+}
+
+@media screen and (max-width:1259px) {
+    .architecture-services-list {margin:40px 0 0 0; display:block}
+    .architecture-services-item {margin:20px 0 0 0; min-width:0; max-width:none; padding:20px 40px 45px 40px}
+    .architecture-services-item:first-child {margin:0}
+    .architecture-services-item .h3 {margin:30px 0 0 0}
+}
+
+@media screen and (max-width:767px) {
+    .architecture-services {padding:80px 40px 0 40px}
+    .architecture-services-item {padding:20px 20px 30px 20px}
+    .architecture-services-item-photo {margin:0}
+    .architecture-services-item .h3 {margin:20px 0 0 0}
+    .architecture-services-item-anonce {margin:13px 0 0 0}
+    .architecture-services-item-link {margin:20px 0 0 0}
+}
+
+.architecture-prefs {padding:180px 0; background:#36383D}
+.architecture-prefs .h2 {text-align:center}
+.architecture-prefs-list {margin:60px 0 0 0; display:flex}
+.architecture-prefs-item {display:flex; align-items:center; min-width:25%; max-width:25%; padding:60px}
+.architecture-prefs-item:nth-child(1) {background:#272A2E; color:#FFFFFF}
+.architecture-prefs-item:nth-child(2) {background:#575B63; color:#FFFFFF}
+.architecture-prefs-item:nth-child(3) {background:#DEE1E4; color:#36383D}
+.architecture-prefs-item:nth-child(4) {background:#FFFFFF; color:#36383D}
+
+@media screen and (max-width:1799px) {
+    .architecture-prefs {padding:120px 0}
+    .architecture-prefs-list {margin:40px 0 0 0}
+    .architecture-prefs-item {padding:30px 36px; font-size:22px; line-height:28px}
+}
+
+@media screen and (max-width:1259px) {
+    .architecture-prefs-list {flex-wrap:wrap}
+    .architecture-prefs-item {min-width:50%; max-width:50%; padding:30px; font-size:20px; line-height:24px}
+}
+
+@media screen and (max-width:767px) {
+    .architecture-prefs {padding:80px 0 0 0}
+    .architecture-prefs-list {display:block}
+    .architecture-prefs-item {min-width:0; max-width:none; padding:20px 40px; min-height:120px; display:flex; align-items:center}
+}
+
+.project-header-photo-inner .architecture-detail-photo {position:absolute; left:0; top:0; right:0; bottom:0; height:auto; background:no-repeat center; background-size:cover !important}
+
+.architecture-detail {display:flex; flex-wrap:wrap}
+.architecture-detail-descr {order:1; min-width:601px; max-width:601px; background:#DEE1E4; padding:32px; margin:30px 0 0 30px; color:#000000}
+.architecture-detail-descr p {margin:14px 0 0 0}
+.architecture-detail-descr *:first-child {margin-top:0}
+.architecture-detail-descr *:last-child {margin-bottom:0}
+.architecture-detail-photo {order:2; background:no-repeat center; background-size:cover; position:relative}
+.architecture-detail-photo::after {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(10, 10, 10, 0.6); opacity:0; transition:opacity 0.2s}
+.architecture-detail-photo:hover::after {opacity:1}
+.architecture-detail-descr+.architecture-detail-photo {order:0}
+.architecture-detail-photo:nth-child(2) {min-width:calc(100% - 631px); max-width:calc(100% - 631px); min-height:729px; margin:30px 0 0 0}
+.architecture-detail-photo:nth-child(3) {min-width:calc(50% - 15px); max-width:calc(50% - 15px); min-height:571px; margin:30px 15px 0 0}
+.architecture-detail-photo:nth-child(4) {min-width:calc(50% - 15px); max-width:calc(50% - 15px); min-height:571px; margin:30px 0 0 15px}
+.architecture-detail-photo:nth-child(5) {min-width:100%; max-width:100%; min-height:1171px; margin:30px 0 0 0}
+.architecture-detail-photo:nth-child(6) {min-width:calc(33.33% - 15px); max-width:calc(33.33% - 15px); min-height:397px; margin:30px 15px 0 0}
+.architecture-detail-photo:nth-child(7) {min-width:calc(33.33% - 30px); max-width:calc(33.33% - 30px); min-height:397px; margin:30px 15px 0 15px}
+.architecture-detail-photo:nth-child(8) {min-width:calc(33.33% - 15px); max-width:calc(33.33% - 15px); min-height:397px; margin:30px 0 0 15px}
+
+.architecture-detail-3 .architecture-detail-photo:nth-child(3) {min-width:100%; max-width:100%; min-height:1171px; margin:30px 0 0 0}
+.architecture-detail-5 .architecture-detail-photo:nth-child(3) {min-width:100%; max-width:100%; min-height:1171px; margin:30px 0 0 0}
+.architecture-detail-5 .architecture-detail-photo:nth-child(4) {min-width:calc(50% - 15px); max-width:calc(50% - 15px); min-height:571px; margin:30px 15px 0 0}
+.architecture-detail-5 .architecture-detail-photo:nth-child(5) {min-width:calc(50% - 15px); max-width:calc(50% - 15px); min-height:571px; margin:30px 0 0 15px}
+.architecture-detail-6 .architecture-detail-photo:nth-child(3) {min-width:100%; max-width:100%; min-height:1171px; margin:30px 0 0 0}
+.architecture-detail-6 .architecture-detail-photo:nth-child(4) {min-width:calc(33.33% - 15px); max-width:calc(33.33% - 15px); min-height:397px; margin:30px 15px 0 0}
+.architecture-detail-6 .architecture-detail-photo:nth-child(5) {min-width:calc(33.33% - 30px); max-width:calc(33.33% - 30px); min-height:397px; margin:30px 15px 0 15px}
+.architecture-detail-6 .architecture-detail-photo:nth-child(6) {min-width:calc(33.33% - 15px); max-width:calc(33.33% - 15px); min-height:397px; margin:30px 0 0 15px}
+
+@media screen and (max-width:1799px) {
+    .architecture-detail-descr {min-width:396px; max-width:396px; padding:30px; margin:20px 0 0 20px}
+    .architecture-detail-photo:nth-child(2) {min-width:calc(100% - 416px); max-width:calc(100% - 416px); min-height:547px; margin:20px 0 0 0}
+    .architecture-detail-photo:nth-child(3) {min-width:calc(50% - 10px); max-width:calc(50% - 10px); min-height:366px; margin:20px 10px 0 0}
+    .architecture-detail-photo:nth-child(4) {min-width:calc(50% - 10px); max-width:calc(50% - 10px); min-height:366px; margin:20px 0 0 10px}
+    .architecture-detail-photo:nth-child(5) {min-height:595px; margin:20px 0 0 0}
+    .architecture-detail-photo:nth-child(6) {min-width:calc(33.33% - 10px); max-width:calc(33.33% - 10px); min-height:242px; margin:20px 10px 0 0}
+    .architecture-detail-photo:nth-child(7) {min-width:calc(33.33% - 20px); max-width:calc(33.33% - 20px); min-height:242px; margin:20px 10px 0 10px}
+    .architecture-detail-photo:nth-child(8) {min-width:calc(33.33% - 10px); max-width:calc(33.33% - 10px); min-height:242px; margin:20px 0 0 10px}
+
+    .architecture-detail-3 .architecture-detail-photo:nth-child(3) {min-width:100%; max-width:100%; min-height:595px; margin:20px 0 0 0}
+    .architecture-detail-5 .architecture-detail-photo:nth-child(3) {min-width:100%; max-width:100%; min-height:595px; margin:20px 0 0 0}
+    .architecture-detail-5 .architecture-detail-photo:nth-child(4) {min-width:calc(50% - 10px); max-width:calc(50% - 10px); min-height:366px; margin:20px 10px 0 0}
+    .architecture-detail-5 .architecture-detail-photo:nth-child(5) {min-width:calc(50% - 10px); max-width:calc(50% - 10px); min-height:366px; margin:20px 0 0 10px}
+    .architecture-detail-6 .architecture-detail-photo:nth-child(3) {min-width:100%; max-width:100%; min-height:595px; margin:20px 0 0 0}
+    .architecture-detail-6 .architecture-detail-photo:nth-child(4) {min-width:calc(33.33% - 10px); max-width:calc(33.33% - 10px); min-height:242px; margin:20px 10px 0 0}
+    .architecture-detail-6 .architecture-detail-photo:nth-child(5) {min-width:calc(33.33% - 20px); max-width:calc(33.33% - 20px); min-height:242px; margin:20px 10px 0 10px}
+    .architecture-detail-6 .architecture-detail-photo:nth-child(6) {min-width:calc(33.33% - 10px); max-width:calc(33.33% - 10px); min-height:242px; margin:20px 0 0 10px}
+}
+
+@media screen and (max-width:1259px) {
+    .architecture-detail-descr {order:0; min-width:100%; max-width:100%; padding:40px; margin:0}
+    .architecture-detail-photo {order:0}
+    .architecture-detail-photo:nth-child(2) {min-width:100%; max-width:100%; min-height:438px; margin:30px 0 0 0}
+    .architecture-detail-photo:nth-child(3) {min-width:calc(50% - 15px); max-width:calc(50% - 15px); min-height:227px; margin:30px 15px 0 0}
+    .architecture-detail-photo:nth-child(4) {min-width:calc(50% - 15px); max-width:calc(50% - 15px); min-height:227px; margin:30px 0 0 15px}
+    .architecture-detail-photo:nth-child(5) {min-width:100%; max-width:100%; min-height:438px; margin:30px 0 0 0}
+    .architecture-detail-photo:nth-child(6) {min-width:calc(50% - 15px); max-width:calc(50% - 15px); min-height:227px; margin:30px 15px 0 0}
+    .architecture-detail-photo:nth-child(7) {min-width:calc(50% - 15px); max-width:calc(50% - 15px); min-height:227px; margin:30px 0 0 15px}
+    .architecture-detail-photo:nth-child(8) {min-width:100%; max-width:100%; min-height:438px; margin:30px 0 0 0}
+
+    .architecture-detail-3 .architecture-detail-photo:nth-child(3) {min-width:100%; max-width:100%; min-height:438px; margin:30px 0 0 0}
+    .architecture-detail-5 .architecture-detail-photo:nth-child(3) {min-width:calc(50% - 15px); max-width:calc(50% - 15px); min-height:227px; margin:30px 15px 0 0}
+    .architecture-detail-5 .architecture-detail-photo:nth-child(4) {min-width:calc(50% - 15px); max-width:calc(50% - 15px); min-height:227px; margin:30px 0 0 15px}
+    .architecture-detail-5 .architecture-detail-photo:nth-child(5) {min-width:100%; max-width:100%; min-height:438px; margin:30px 0 0 0}
+    .architecture-detail-6 .architecture-detail-photo:nth-child(3) {min-width:100%; max-width:100%; min-height:438px; margin:30px 0 0 0}
+    .architecture-detail-6 .architecture-detail-photo:nth-child(4) {min-width:calc(50% - 15px); max-width:calc(50% - 15px); min-height:227px; margin:30px 15px 0 0}
+    .architecture-detail-6 .architecture-detail-photo:nth-child(5) {min-width:calc(50% - 15px); max-width:calc(50% - 15px); min-height:227px; margin:30px 0 0 15px}
+    .architecture-detail-6 .architecture-detail-photo:nth-child(6) {min-width:100%; max-width:100%; min-height:438px; margin:30px 0 0 0}
+}
+
+@media screen and (max-width:767px) {
+    .architecture-detail-photo:nth-child(2) {min-height:296px; margin:10px 0 0 0}
+    .architecture-detail-photo:nth-child(3) {min-width:calc(50% - 5px); max-width:calc(50% - 5px); margin:10px 5px 0 0}
+    .architecture-detail-photo:nth-child(4) {min-width:calc(50% - 5px); max-width:calc(50% - 5px); margin:10px 0 0 5px}
+    .architecture-detail-photo:nth-child(5) {min-height:296px; margin:10px 0 0 0}
+    .architecture-detail-photo:nth-child(6) {min-width:calc(50% - 5px); max-width:calc(50% - 5px); margin:10px 5px 0 0}
+    .architecture-detail-photo:nth-child(7) {min-width:calc(50% - 5px); max-width:calc(50% - 5px); margin:10px 0 0 5px}
+    .architecture-detail-photo:nth-child(8) {min-height:296px; margin:10px 0 0 0}
+
+    .architecture-detail-3 .architecture-detail-photo:nth-child(3) {min-width:100%; max-width:100%; min-height:296px; margin:10px 0 0 0}
+    .architecture-detail-5 .architecture-detail-photo:nth-child(3) {min-width:calc(50% - 5px); max-width:calc(50% - 5px); margin:10px 5px 0 0}
+    .architecture-detail-5 .architecture-detail-photo:nth-child(4) {min-width:calc(50% - 5px); max-width:calc(50% - 5px); margin:10px 0 0 5px}
+    .architecture-detail-5 .architecture-detail-photo:nth-child(5) {min-height:296px; margin:10px 0 0 0}
+    .architecture-detail-6 .architecture-detail-photo:nth-child(3) {min-width:100%; max-width:100%; min-height:296px; margin:10px 0 0 0}
+    .architecture-detail-6 .architecture-detail-photo:nth-child(4) {min-width:calc(50% - 5px); max-width:calc(50% - 5px); margin:10px 5px 0 0}
+    .architecture-detail-6 .architecture-detail-photo:nth-child(5) {min-width:calc(50% - 5px); max-width:calc(50% - 5px); margin:10px 0 0 5px}
+    .architecture-detail-6 .architecture-detail-photo:nth-child(6) {min-height:296px; margin:10px 0 0 0}
+}
+
+.architecture-detail-schemes {margin:180px 80px}
+.architecture-detail-schemes+.design-seo {padding-top:0}
+.architecture-detail-schemes .h2 {text-align:center}
+.architecture-detail-schemes-list {margin:84px 0 0 0; display:flex; flex-wrap:wrap; gap:52px 30px; justify-content:center}
+.architecture-detail-schemes-item {min-width:596px; max-width:596px; text-decoration:none}
+.architecture-detail-schemes-item:hover {text-decoration:none}
+.architecture-detail-schemes-item-preview {height:542px; background:no-repeat center; background-size:cover; position:relative; margin:0 0 20px 0}
+.architecture-detail-schemes-item-preview::after {content:""; display:block; position:absolute; left:0; top:0; right:0; bottom:0; background:rgba(10, 10, 10, 0.6); opacity:0; transition:opacity 0.2s}
+.architecture-detail-schemes-item:hover .architecture-detail-schemes-item-preview::after {opacity:1}
+
+@media screen and (max-width:1799px) {
+    .architecture-detail-schemes {margin:120px 60px}
+    .architecture-detail-schemes-list {margin:40px 0 0 0; gap:52px 20px}
+    .architecture-detail-schemes-item {min-width:393px; max-width:393px}
+    .architecture-detail-schemes-item-preview {height:355px}
+}
+
+@media screen and (max-width:1259px) {
+    .architecture-detail-schemes {margin:120px 40px}
+    .architecture-detail-schemes-list {margin:54px 0 0 0; gap:47px 20px}
+    .architecture-detail-schemes-item {min-width:334px; max-width:334px}
+    .architecture-detail-schemes-item-preview {height:299px; margin:0 0 16px 0}
+}
+
+@media screen and (max-width:767px) {
+    .architecture-detail-schemes {margin:80px 40px}
+    .architecture-detail-schemes-list {margin:40px 0 0 0; display:block}
+    .architecture-detail-schemes-item {display:block; min-width:0; max-width:none; margin:40px 0 0 0}
+    .architecture-detail-schemes-item-preview {height:359px; margin:0 0 15px 0}
+}
