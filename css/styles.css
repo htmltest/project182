@@ -1504,9 +1504,9 @@ footer {background:#272A2E; padding:80px; position:relative}
 .grecaptcha-badge {visibility:hidden}
 
 .social-links {position:fixed; right:8px; bottom:8px; z-index:10; display:flex; mix-blend-mode:difference}
-.social-links a {min-width:32px; max-width:32px; margin:0 0 0 8px}
+.social-links a {min-width:48px; max-width:48px; margin:0 0 0 8px}
 .social-links a:first-child {margin:0}
-.social-links a svg {display:block; width:32px; height:32px; fill:#FFFFFF; transition:fill 0.2s}
+.social-links a svg {display:block; width:48px; height:48px; fill:#FFFFFF; transition:fill 0.2s}
 @media screen and (min-width:1260px) {
     .social-links a:hover svg {fill:#E20E0E}
 }
@@ -2369,7 +2369,7 @@ footer {background:#272A2E; padding:80px; position:relative}
 
 .swiper {-moz-user-select:none; -webkit-user-select:none; -ms-user-select:none; user-select:none}
 
-.cookies-message {display:none; align-items:center; position:fixed; width:772px; right:20px; bottom:20px; z-index:20; background:#FFFFFF; border:1px solid #DEE1E4; padding:15px}
+.cookies-message {display:none; align-items:center; position:fixed; width:772px; right:150px; bottom:20px; z-index:20; background:#FFFFFF; border:1px solid #DEE1E4; padding:15px}
 .cookies-message.visible {display:flex}
 .cookies-message-text {font-weight:500; font-size:16px; line-height:1.2em; color:#2F3236; width:100%}
 .cookies-message-btn {margin:0 0 0 16px}
@@ -2382,7 +2382,7 @@ footer {background:#272A2E; padding:80px; position:relative}
 }
 
 @media screen and (max-width:767px) {
-    .cookies-message {width:auto; left:10px; right:10px; bottom:10px}
+    .cookies-message {width:auto; left:10px; right:10px; bottom:80px}
     .cookies-message-text {font-size:11px}
     .cookies-message-btn .btn {padding:0 14px}
 }
