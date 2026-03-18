@@ -1157,7 +1157,7 @@ $(document).ready(function() {
 
         e.preventDefault();
     });
-    
+
     $('.architecture-detail').each(function() {
         var curBlock = $(this);
         if (curBlock.find('.architecture-detail-photo').length == 2) {
@@ -1168,6 +1168,42 @@ $(document).ready(function() {
         }
         if (curBlock.find('.architecture-detail-photo').length == 5) {
             curBlock.addClass('architecture-detail-6');
+        }
+    });
+
+    $('.main-price-item-info-title-inner').click(function(e) {
+        const curItem = $(this).parent().parent();
+        curItem.toggleClass('open');
+        curItem.find('.main-price-item-detail').slideToggle();
+        e.preventDefault();
+    });
+
+    $('.main-steps-order .portfolio-link').click(function(e) {
+        $('html, body').animate({'scrollTop': $('.design-order').offset().top});
+        e.preventDefault();
+    });
+
+});
+
+$(window).on('load resize', function() {
+
+    $('.main-others-list').each(function() {
+        const curList = $(this);
+        if ($(window).width() < 768) {
+            if (!curList.hasClass('slick-slider')) {
+                $('.main-others-list').slick({
+                    infinite: true,
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    arrows: false,
+                    adaptiveHeight: true,
+                    dots: true
+                });
+            }
+        } else {
+            if (curList.hasClass('slick-slider')) {
+                curList.slick('unslick');
+            }
         }
     });
 
