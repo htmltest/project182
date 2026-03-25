@@ -15,8 +15,8 @@ body {min-width:480px; margin:0; padding:0; font:300 22px/33px Arial, sans-serif
     body {font-size:20px; line-height:30px}
 }
 
-a {color:#fff; text-decoration:none}
-a:hover {text-decoration:underline}
+a {color:#fff; text-decoration:underline}
+a:hover {text-decoration:none}
 
 .js-link {cursor:pointer}
 .js-link:hover {text-decoration:underline}
@@ -1045,6 +1045,8 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 .contacts-detail {margin:141px 0 0 0; font-size:30px; line-height:40px; font-weight:normal; letter-spacing:-0.02em; text-transform:uppercase}
 .fonts-loaded .contacts-detail {font-family:Steinbeck, sans-serif}
 .contacts-detail-item {margin:30px 0 0 0}
+.contacts-detail-item a {text-decoration:none}
+.contacts-detail-item a:hover {text-decoration:underline}
 .contacts-detail-item span {display:none}
 .contacts-detail-item em {font-style:normal}
 .contacts-list {float:right; width:50%}
@@ -1058,7 +1060,8 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 .fonts-loaded .contacts-item-name {font-family:Steinbeck, sans-serif}
 .contacts-item-post {margin:9px 0 0 0; line-height:29px; color:#dee1e4}
 .contacts-item-link {margin:6px 0 0 0; color:#dee1e4}
-.contacts-item-link a {color:#dee1e4}
+.contacts-item-link a {color:#dee1e4; text-decoration:none}
+.contacts-item-link a:hover {text-decoration:underline}
 
 @media screen and (max-width:1799px) {
     .contacts-text-inner {padding:56px 0 56px 60px}
@@ -1122,6 +1125,8 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
 .page-404-list ul li {margin:34px 0 0 0; padding:0}
 .page-404-list ul li::before {content:""; display:block; clear:both}
 .page-404-list ul li:first-child {margin:0}
+.page-404-list a {text-decoration:none}
+.page-404-list a:hover {text-decoration:underline}
 
 @media screen and (max-width:1799px) {
     .page-404-logo {width:120px}
@@ -1174,7 +1179,8 @@ footer {background:#272A2E; padding:80px; position:relative}
 .fonts-loaded .footer-contacts-list {font-family:Steinbeck, sans-serif}
 .footer-contacts-item {margin:17px 0 0 0}
 .footer-contacts-item:first-child {margin:0}
-.footer-contacts-item a {margin:0 10px 0 0}
+.footer-contacts-item a {margin:0 10px 0 0; text-decoration:none}
+.footer-contacts-item a:hover {text-decoration:underline}
 .footer-contacts-item a:last-child {margin:0}
 
 @media screen and (max-width:1799px) {
@@ -1245,6 +1251,8 @@ footer {background:#272A2E; padding:80px; position:relative}
 .footer-data-text p {margin:7px 0 0 0}
 .footer-copyrights {font-weight:normal; font-size:16px; line-height:24px; text-transform:uppercase}
 .footer-copyrights p {margin:19px 0 0 0; padding:0}
+.footer-copyrights a {text-decoration:none}
+.footer-copyrights a:hover {text-decoration:underline}
 
 @media screen and (max-width:1799px) {
     .footer-info {min-width:39%; max-width:39%; padding:20px 60px 0 0}
