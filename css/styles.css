@@ -528,9 +528,10 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
     .portfolio-item:nth-child(2) {padding-left:0}
     .portfolio-item-inner {height:420px}
     .portfolio-item-content {padding:55px 40px 60px 60px}
+    .portfolio-item-content .h3 {font-size:24px; line-height:30px}
     .portfolio-item:nth-child(1),
     .portfolio-item:nth-child(2) .portfolio-item-content .h3 {max-width:none}
-    .portfolio-item-size {margin:12px 0 0 0; font-size:24px}
+    .portfolio-item-size {margin:12px 0 0 0; font-size:20px}
     .portfolio-item-address {margin:12px 0 0 0; font-size:18px; line-height:27px}
     .portfolio-item:nth-child(1),
     .portfolio-item:nth-child(2) .portfolio-item-address {max-width:none}
@@ -562,7 +563,6 @@ header {position:fixed; left:0; top:0; bottom:0; width:72px; z-index:100; backgr
     .portfolio-item:nth-child(4n) .portfolio-item-content .btn:hover {color:#fff; background:#494d53}
     .portfolio-item:nth-child(4n) .portfolio-item-content .btn:active {color:#fff; background:#5b6068}
 
-    .portfolio-item-content .h3 {font-size:24px; line-height:30px}
     .portfolio-item-size {display:none}
     .portfolio-item-address {margin:10px 0 0 0; font-size:18px; line-height:27px}
     .portfolio-item-size-tablet {display:block; margin:16px 0 0 0; font-size:18px; line-height:27px; letter-spacing:0}
